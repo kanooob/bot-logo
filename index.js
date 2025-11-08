@@ -195,11 +195,11 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
               while(s4d.client && s4d.client.token) {
                   await delay(50);
                     s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
+        await delay(Number(180)*1000);
         if (jour != ((new Date().getDate()))) {
           jour = ((new Date().getDate()));
           eventEmitter.emit('1');
         }
-        await delay(Number(180)*1000);
         ms_on = (s4d.client.uptime);
         s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
     
