@@ -237,11 +237,11 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
               while(s4d.client && s4d.client.token) {
                   await delay(50);
                     s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
-        await delay(Number(180)*1000);
         if (jour != ((new Date().getDate()))) {
           jour = ((new Date().getDate()));
           eventEmitter.emit('changement');
         }
+        await delay(Number(180)*1000);
         ms_on = (s4d.client.uptime);
         s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
     
@@ -546,13 +546,15 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
     eventEmitter.on('changement', async => {
           s4d.client.guilds.cache.forEach(async (s) =>{
-         (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('🔁 Changement...')});
-        (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('🔁 Changement...')});
-        (s).setName(((s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic));
-        (s).setIcon(((s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
+         if (typeof (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
+          (s).setName(((s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic));
+          (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
+        }
+        if (typeof (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
+          (s).setIcon(((s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
     
-        (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
-        (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
+          (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
+        }
         console.log((['Changement du serveur : ',(s).name,' (',(s).id,').'].join('')));
     
       })
