@@ -425,7 +425,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                             </ol>
     
                             <div class="note">
-                                NOTE IMPORTANTE : Le changement (logo OU nom) se déclenche quand un message est envoyé sur le serveur. Le bot envoie lui-même un message discret en début de journée pour s'assurer que le changement se fasse, donc pas besoin de s'inquiéter.
+                                NOTE IMPORTANTE : Le changement (logo OU nom) se déclenche quand un message est envoyé sur le serveur (🔄 Loading). Le bot envoie lui-même un message discret en début de journée pour s'assurer que le changement se fasse, donc pas besoin de s'inquiéter.
                             </div>
                         \`;
     
@@ -507,7 +507,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                             </ol>
     
                             <div class="note">
-                                IMPORTANT NOTE: The change (logo OR name) is triggered when a message is sent on the server. The bot sends a discreet message itself at the beginning of the day to ensure the change happens, so you don't need to worry.
+                                IMPORTANT NOTE: The change (logo OR name) is triggered when a message is sent on the server (🔄 Loading). The bot sends a discreet message itself at the beginning of the day to ensure the change happens, so you don't need to worry.
                             </div>
                         \`;
     
