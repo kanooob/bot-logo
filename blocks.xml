@@ -1363,6 +1363,44 @@
                     <field name="TEXT">✅ Logo du serveurs changé.</field>
                   </block>
                 </value>
+                <next>
+                  <block type="s4d_print" id="zQuEv95-I@;Ju==oZp(n">
+                    <value name="PRINT">
+                      <block type="text_join" id="2A~RCAv)$+w41-cSj^Sp">
+                        <mutation items="5"></mutation>
+                        <value name="ADD0">
+                          <block type="jg_text_remake_paragraph_quotes" id="50BF#u/6z?c@Do,OB.?K">
+                            <field name="TEXT">Logo du serveur </field>
+                          </block>
+                        </value>
+                        <value name="ADD1">
+                          <block type="s4d_server_name" id="{Vc]ySeCetXRLNg:Hp_-">
+                            <value name="SERVER">
+                              <block type="s4d_message_guild" id="6$jQ).13eLAWj$^B%d/n"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD2">
+                          <block type="jg_text_remake_paragraph_quotes" id="/_lKe0{qn1X|8)_0@z4y">
+                            <field name="TEXT"> (</field>
+                          </block>
+                        </value>
+                        <value name="ADD3">
+                          <block type="s4d_server_id" id="UEaR#u!%z_HUvtD3U?vv">
+                            <value name="SERVER">
+                              <block type="s4d_message_guild" id="Q3%3}?$+1ZUw4oYg,7A]"></block>
+                            </value>
+                          </block>
+                        </value>
+                        <value name="ADD4">
+                          <block type="jg_text_remake_paragraph_quotes" id="$f_}YLUP|qejV=XO,UOb">
+                            <field name="TEXT">).</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
@@ -1508,6 +1546,44 @@
                         <field name="TEXT">✅ Nom du serveurs changé.</field>
                       </block>
                     </value>
+                    <next>
+                      <block type="s4d_print" id="h,|1ZTxiNpZL3S~+Gv7H">
+                        <value name="PRINT">
+                          <block type="text_join" id="r7ji2iAO5p=]qBqWOx7w">
+                            <mutation items="5"></mutation>
+                            <value name="ADD0">
+                              <block type="jg_text_remake_paragraph_quotes" id="#vH0}(D6k`l7.3v5Op~q">
+                                <field name="TEXT">Nom du serveur </field>
+                              </block>
+                            </value>
+                            <value name="ADD1">
+                              <block type="s4d_server_name" id="x|VRE$?Bb7jo?BZP79^7">
+                                <value name="SERVER">
+                                  <block type="s4d_message_guild" id="+r3o?IdM5[.4{=hlSM/X"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD2">
+                              <block type="jg_text_remake_paragraph_quotes" id=";1i=f6p^a^|mev)oGql;">
+                                <field name="TEXT"> (</field>
+                              </block>
+                            </value>
+                            <value name="ADD3">
+                              <block type="s4d_server_id" id="yI_CK?LTp9jgU84qdH}:">
+                                <value name="SERVER">
+                                  <block type="s4d_message_guild" id="5~f,q5SdW;WYt7lSEQ/~"></block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="ADD4">
+                              <block type="jg_text_remake_paragraph_quotes" id="uwF(Z8d2(RiDUtsyUyMH">
+                                <field name="TEXT">).</field>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>
