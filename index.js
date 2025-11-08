@@ -545,17 +545,15 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
     s4d.client.on('messageCreate', async (s4dmessage) => {
-      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('') && (s4dmessage.channel.parent) == (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto')) {
+      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) == '🔄 Loading') {
         (s4dmessage.guild).setName(((s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
     
-        s4dmessage.channel.send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
-        (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🆗 Nom du serveur changé.')});
+        s4dmessage.channel.send({content:String('✅ Nom du serveurs changé.')});
       }
-      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('') && (s4dmessage.channel.parent) == (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto')) {
+      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) == '🔄 Loading') {
         (s4dmessage.guild).setIcon(((s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
     
-        s4dmessage.channel.send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
-        (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🆗 Logo du serveur changé.')});
+        s4dmessage.channel.send({content:String('✅ logo du serveurs changé.')});
       }
     
     });
@@ -567,7 +565,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     eventEmitter.on('1', async => {
           s4d.client.guilds.cache.forEach(async (s) =>{
-         (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔁 Changement...')});
+         (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
     
       })
     
