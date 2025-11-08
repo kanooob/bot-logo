@@ -544,22 +544,31 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     
     S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
+    s4d.client.on('guildCreate', async (s4dguild) => {
+      s4d.client.channels.cache.get('1432341468059537419').send({content:String((['Bot ajouté dans **',s4dguild.name,'** (',s4dguild.id,').'].join('')))});
+    
+    });
+    
     s4d.client.on('messageCreate', async (s4dmessage) => {
+      (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).messages.fetch({ limit: 1 }).then(async (last_messages_in_channel) => {
+            if (((last_messages_in_channel.at(1 - 1)).content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')) {
+          (s4dmessage.guild).setName(((s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic));
+          (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
+          (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['✅ **Le nom du serveur à été mis à jour !**','\n','Action :Changer le nom du serveur. Date :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear()),'\n','Nom :',(s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic].join('')))});
+          console.log((['Changement du nom du serveur : ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
+        }
+    
+      });
       (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).messages.fetch({ limit: 1 }).then(async (last_messages_in_channel) => {
             if (((last_messages_in_channel.at(1 - 1)).content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')) {
           (s4dmessage.guild).setIcon(((s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
     
-          (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('ok')});
+          (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('Juste ok')});
           (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['✅ **Le logo du serveur à été mis à jour !**','\n','Action :Changer le logo du serveur. Date :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear()),'\n','Logo :',(s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic].join('')))});
           console.log((['Changement de logo du serveur : ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
         }
     
       });
-    
-    });
-    
-    s4d.client.on('guildCreate', async (s4dguild) => {
-      s4d.client.channels.cache.get('1432341468059537419').send({content:String((['Bot ajouté dans **',s4dguild.name,'** (',s4dguild.id,').'].join('')))});
     
     });
     
@@ -572,19 +581,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       })
     
       });
-    
-    s4d.client.on('messageCreate', async (s4dmessage) => {
-      (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).messages.fetch({ limit: 1 }).then(async (last_messages_in_channel) => {
-            if (((last_messages_in_channel.at(1 - 1)).content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')) {
-          (s4dmessage.guild).setName(((s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic));
-          (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
-          (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['✅ **Le nom du serveur à été mis à jour !**','\n','Action :Changer le nom du serveur. Date :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear()),'\n','Nom :',(s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic].join('')))});
-          console.log((['Changement du nom du serveur : ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
-        }
-    
-      });
-    
-    });
     
     return s4d
 })();
