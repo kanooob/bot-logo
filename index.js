@@ -549,7 +549,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             if (((last_messages_in_channel.at(1 - 1)).content) != ['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')) {
           (s4dmessage.guild).setIcon(((s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
     
-          (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String((['✅ :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear())].join('')))});
+          (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('ok')});
           (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['✅ **Le logo du serveur à été mis à jour !**','\n','Action :Changer le logo du serveur. Date :',(new Date().getDate()),'-',((new Date().getMonth())) + 1,'-',(new Date().getFullYear()),'\n','Logo :',(s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic].join('')))});
           console.log((['Changement de logo du serveur : ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
         }
@@ -566,7 +566,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     eventEmitter.on('changement', async => {
           s4d.client.guilds.cache.forEach(async (s) =>{
          (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('🔁 Changement...')});
-        await delay(Number(1)*1000);
+        await delay(Number(2)*1000);
         (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).send({content:String('🔁 Changement...')});
     
       })
