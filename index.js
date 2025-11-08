@@ -261,280 +261,280 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
       S4D_WEBSITECREATION_EXPRESS_app.all('/help', async function(req, res) {
           S4D_APP_write.sync(String('help.html'), String(`<!DOCTYPE html>
-        <html lang="fr">
-        <head>
-            <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
-            <style>
-                body {
-                    font-family: Arial, sans-serif;
-                    line-height: 1.6;
-                    margin: 20px;
-                    background-color: #f4f4f4;
-                    color: #333;
-                }
-                .container {
-                    max-width: 900px;
-                    margin: auto;
-                    background: #fff;
-                    padding: 30px;
-                    border-radius: 8px;
-                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                }
-                h1 {
-                    color: #7289da; /* Couleur Discord */
-                    border-bottom: 2px solid #7289da;
-                    padding-bottom: 10px;
-                }
-                h2 {
-                    color: #5865f2;
-                    margin-top: 30px;
-                }
-                code {
-                    background-color: #eee;
-                    padding: 2px 4px;
-                    border-radius: 4px;
-                }
-                .command-list {
-                    list-style-type: none;
-                    padding: 0;
-                }
-                .command-list li {
-                    margin-bottom: 10px;
-                }
-                .note {
-                    background-color: #fff3cd;
-                    border-left: 5px solid #ffc107;
-                    padding: 15px;
-                    margin-top: 20px;
-                    border-radius: 4px;
-                }
-                .lang-switch button {
-                    background-color: #7289da;
-                    color: white;
-                    border: none;
-                    padding: 10px 15px;
-                    cursor: pointer;
-                    border-radius: 4px;
-                    margin-left: 10px;
-                    font-weight: bold;
-                    transition: background-color 0.3s;
-                }
-                .lang-switch button:hover {
-                    background-color: #5865f2;
-                }
-                .lang-switch {
-                    text-align: center;
-                    margin-bottom: 20px;
-                }
-                hr {
-                    border: 0;
-                    border-top: 1px dashed #ddd;
-                    margin: 30px 0;
-                }
-            </style>
-        </head>
-        <body>
-            <div class="container">
-                <div class="lang-switch">
-                    <button onclick="changeLanguage('fr')">Afficher en Français</button>
-                    <button onclick="changeLanguage('en')">Display in English</button>
-                </div>
+                <html lang="fr">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
+                    <style>
+                        body {
+                            font-family: Arial, sans-serif;
+                            line-height: 1.6;
+                            margin: 20px;
+                            background-color: #f4f4f4;
+                            color: #333;
+                        }
+                        .container {
+                            max-width: 900px;
+                            margin: auto;
+                            background: #fff;
+                            padding: 30px;
+                            border-radius: 8px;
+                            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        }
+                        h1 {
+                            color: #7289da; /* Couleur Discord */
+                            border-bottom: 2px solid #7289da;
+                            padding-bottom: 10px;
+                        }
+                        h2 {
+                            color: #5865f2;
+                            margin-top: 30px;
+                        }
+                        code {
+                            background-color: #eee;
+                            padding: 2px 4px;
+                            border-radius: 4px;
+                        }
+                        .command-list {
+                            list-style-type: none;
+                            padding: 0;
+                        }
+                        .command-list li {
+                            margin-bottom: 10px;
+                        }
+                        .note {
+                            background-color: #fff3cd;
+                            border-left: 5px solid #ffc107;
+                            padding: 15px;
+                            margin-top: 20px;
+                            border-radius: 4px;
+                        }
+                        .lang-switch button {
+                            background-color: #7289da;
+                            color: white;
+                            border: none;
+                            padding: 10px 15px;
+                            cursor: pointer;
+                            border-radius: 4px;
+                            margin-left: 10px;
+                            font-weight: bold;
+                            transition: background-color 0.3s;
+                        }
+                        .lang-switch button:hover {
+                            background-color: #5865f2;
+                        }
+                        .lang-switch {
+                            text-align: center;
+                            margin-bottom: 20px;
+                        }
+                        hr {
+                            border: 0;
+                            border-top: 1px dashed #ddd;
+                            margin: 30px 0;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div class="container">
+                        <div class="lang-switch">
+                            <button onclick="changeLanguage('fr')">Afficher en Français</button>
+                            <button onclick="changeLanguage('en')">Display in English</button>
+                        </div>
     
-                <div id="content-area">
+                        <div id="content-area">
+                            </div>
                     </div>
-            </div>
     
-            <script>
-                // --- Contenu Français ---
-                const contentFR = \`
-                    <h1>Aide de Logoto - Automatisez votre Logo & Nom ! 🇫🇷</h1>
-                    <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
+                    <script>
+                        // --- Contenu Français ---
+                        const contentFR = \`
+                            <h1>Aide de Logoto - Automatisez votre Logo & Nom ! 🇫🇷</h1>
+                            <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
     
-                    <h2>Les Commandes</h2>
-                    <ul class="command-list">
-                        <li><code>/setup</code> : Crée un salon de démonstration pour comprendre le fonctionnement et démarrer rapidement la configuration.</li>
-                        <li><code>/logo-add</code> : Crée un salon de changement de logo avec les options <code>day</code> (Obligatoire, pour le jour) et <code>month</code> (Obligatoire, pour le mois).</li>
-                        <li><code>/name-add</code> : Crée un salon de changement de nom du serveur avec les options <code>day</code> et <code>month</code>.</li>
-                        <li><code>/help</code> : Affiche ce message d'aide (ou cette page !).</li>
-                        <li><code>/invite</code> : Obtenez le lien pour inviter le bot sur votre serveur.</li>
-                        <li><code>/support</code> : Rejoignez le serveur de support pour toute question ou aide.</li>
-                    </ul>
-    
-                    <hr>
-    
-                    <h2>Système de Changement de Logo Automatique (Configuration Manuelle)</h2>
-                    <p>Le bot surveille un salon spécifique pour planifier et exécuter les changements de logo. Voici comment le configurer manuellement :</p>
-    
-                    <ol>
-                        <li>
-                            Créez le Salon de Planification (Logo) :
-                            <ul>
-                                <li>Le nom du salon doit être au format suivant : <code>l-[JOUR]-[MOIS]</code></li>
-                                <li>EXEMPLE : Pour un logo qui changera le 31 décembre sur un serveur : <code>l-31-12</code></li>
+                            <h2>Les Commandes</h2>
+                            <ul class="command-list">
+                                <li><code>/setup</code> : Crée un salon de démonstration pour comprendre le fonctionnement et démarrer rapidement la configuration.</li>
+                                <li><code>/logo-add</code> : Crée un salon de changement de logo avec les options <code>day</code> (Obligatoire, pour le jour) et <code>month</code> (Obligatoire, pour le mois).</li>
+                                <li><code>/name-add</code> : Crée un salon de changement de nom du serveur avec les options <code>day</code> et <code>month</code>.</li>
+                                <li><code>/help</code> : Affiche ce message d'aide (ou cette page !).</li>
+                                <li><code>/invite</code> : Obtenez le lien pour inviter le bot sur votre serveur.</li>
+                                <li><code>/support</code> : Rejoignez le serveur de support pour toute question ou aide.</li>
                             </ul>
-                        </li>
-                        <li>
-                            Préparez le Logo :
-                            <ul>
-                                <li>Envoyez votre image de logo sur n'importe quel salon Discord et copiez son lien direct.</li>
+    
+                            <hr>
+    
+                            <h2>Système de Changement de Logo Automatique (Configuration Manuelle)</h2>
+                            <p>Le bot surveille un salon spécifique pour planifier et exécuter les changements de logo. Voici comment le configurer manuellement :</p>
+    
+                            <ol>
+                                <li>
+                                    Créez le Salon de Planification (Logo) :
+                                    <ul>
+                                        <li>Le nom du salon doit être au format suivant : <code>l-[JOUR]-[MOIS]</code></li>
+                                        <li>EXEMPLE : Pour un logo qui changera le 31 décembre sur un serveur : <code>l-31-12</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Préparez le Logo :
+                                    <ul>
+                                        <li>Envoyez votre image de logo sur n'importe quel salon Discord et copiez son lien direct.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Planifiez le Changement :
+                                    <ul>
+                                        <li>Modifiez le Sujet du Salon (Channel Topic) créé à l'étape 1.</li>
+                                        <li>Collez le **lien** de votre image dans le sujet du salon.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Résultat :
+                                    <ul>
+                                        <li>Le bot changera automatiquement le logo du serveur au jour et au mois spécifiés dans le nom du salon !</li>
+                                    </ul>
+                                </li>
+                            </ol>
+    
+                            <hr>
+    
+                            <h2>Système de Changement de Nom Automatique (Configuration Manuelle)</h2>
+                            <p>Le bot surveille un autre salon pour modifier le nom de votre serveur. Voici comment le configurer manuellement :</p>
+    
+                            <ol>
+                                <li>
+                                    Créez le Salon de Planification (Nom) :
+                                    <ul>
+                                        <li>Le nom du salon doit être au format suivant : <code>n-[JOUR]-[MOIS]</code></li>
+                                        <li>EXEMPLE : Pour un nom qui changera le 31 décembre sur un serveur : <code>n-31-12</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Planifiez le Changement :
+                                    <ul>
+                                        <li>Modifiez le Sujet du Salon (Channel Topic) créé à l'étape 1.</li>
+                                        <li>Écrivez le **nouveau nom du serveur** dans le sujet du salon.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Résultat :
+                                    <ul>
+                                        <li>Le bot changera automatiquement le nom du serveur au jour et au mois spécifiés dans le nom du salon !</li>
+                                    </ul>
+                                </li>
+                            </ol>
+    
+                            <div class="note">
+                                NOTE IMPORTANTE : Le changement (logo OU nom) se déclenche quand un message est envoyé sur le serveur. Le bot envoie lui-même un message discret en début de journée pour s'assurer que le changement se fasse, donc pas besoin de s'inquiéter.
+                            </div>
+                        \`;
+    
+                        // --- Contenu Anglais ---
+                        const contentEN = \`
+                            <h1>Logoto Help - Automate your Logo & Name! 🇬🇧</h1>
+                            <p>I am the bot specialized in automating the change of your server's logo AND name, without requiring complex commands after the initial setup.</p>
+    
+                            <h2>Commands</h2>
+                            <ul class="command-list">
+                                <li><code>/setup</code> : Creates a demonstration channel to understand the process and quickly start the configuration.</li>
+                                <li><code>/logo-add</code> : Creates a logo change channel with the options <code>day</code> (Required) and <code>month</code> (Required).</li>
+                                <li><code>/name-add</code> : Creates a server name change channel with the options <code>day</code> and <code>month</code>.</li>
+                                <li><code>/help</code> : Displays this help message (or this page!).</li>
+                                <li><code>/invite</code> : Get the link to invite the bot to your server.</li>
+                                <li><code>/support</code> : Join the support server for any questions or assistance.</li>
                             </ul>
-                        </li>
-                        <li>
-                            Planifiez le Changement :
-                            <ul>
-                                <li>Modifiez le Sujet du Salon (Channel Topic) créé à l'étape 1.</li>
-                                <li>Collez le **lien** de votre image dans le sujet du salon.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Résultat :
-                            <ul>
-                                <li>Le bot changera automatiquement le logo du serveur au jour et au mois spécifiés dans le nom du salon !</li>
-                            </ul>
-                        </li>
-                    </ol>
     
-                    <hr>
+                            <hr>
     
-                    <h2>Système de Changement de Nom Automatique (Configuration Manuelle)</h2>
-                    <p>Le bot surveille un autre salon pour modifier le nom de votre serveur. Voici comment le configurer manuellement :</p>
+                            <h2>Automatic Logo Change System (Manual Setup)</h2>
+                            <p>The bot monitors a specific channel to schedule and execute logo changes. Here's how to configure it manually:</p>
     
-                    <ol>
-                        <li>
-                            Créez le Salon de Planification (Nom) :
-                            <ul>
-                                <li>Le nom du salon doit être au format suivant : <code>n-[JOUR]-[MOIS]</code></li>
-                                <li>EXEMPLE : Pour un nom qui changera le 31 décembre sur un serveur : <code>n-31-12</code></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Planifiez le Changement :
-                            <ul>
-                                <li>Modifiez le Sujet du Salon (Channel Topic) créé à l'étape 1.</li>
-                                <li>Écrivez le **nouveau nom du serveur** dans le sujet du salon.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Résultat :
-                            <ul>
-                                <li>Le bot changera automatiquement le nom du serveur au jour et au mois spécifiés dans le nom du salon !</li>
-                            </ul>
-                        </li>
-                    </ol>
+                            <ol>
+                                <li>
+                                    Create the Scheduling Channel (Logo):
+                                    <ul>
+                                        <li>The channel name must follow this format: <code>l-[DAY]-[MONTH]</code></li>
+                                        <li>EXAMPLE: For a logo that will change on December 31st on a server: <code>l-31-12</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Prepare the Logo:
+                                    <ul>
+                                        <li>Upload your logo image to any Discord channel and copy its direct link.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Schedule the Change:
+                                    <ul>
+                                        <li>Edit the Channel Topic of the channel you created in step 1.</li>
+                                        <li>Paste the **link** of your image into the channel topic.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Result:
+                                    <ul>
+                                        <li>The bot will automatically change the server logo on the day and month specified in the channel name!</li>
+                                    </ul>
+                                </li>
+                            </ol>
     
-                    <div class="note">
-                        NOTE IMPORTANTE : Le changement (logo OU nom) se déclenche quand un message est envoyé sur le serveur. Le bot envoie lui-même un message discret en début de journée pour s'assurer que le changement se fasse, donc pas besoin de s'inquiéter.
-                    </div>
-                \`;
+                            <hr>
     
-                // --- Contenu Anglais ---
-                const contentEN = \`
-                    <h1>Logoto Help - Automate your Logo & Name! 🇬🇧</h1>
-                    <p>I am the bot specialized in automating the change of your server's logo AND name, without requiring complex commands after the initial setup.</p>
+                            <h2>Automatic Name Change System (Manual Setup)</h2>
+                            <p>The bot monitors another channel to modify your server's name. Here's how to configure it manually:</p>
     
-                    <h2>Commands</h2>
-                    <ul class="command-list">
-                        <li><code>/setup</code> : Creates a demonstration channel to understand the process and quickly start the configuration.</li>
-                        <li><code>/logo-add</code> : Creates a logo change channel with the options <code>day</code> (Required) and <code>month</code> (Required).</li>
-                        <li><code>/name-add</code> : Creates a server name change channel with the options <code>day</code> and <code>month</code>.</li>
-                        <li><code>/help</code> : Displays this help message (or this page!).</li>
-                        <li><code>/invite</code> : Get the link to invite the bot to your server.</li>
-                        <li><code>/support</code> : Join the support server for any questions or assistance.</li>
-                    </ul>
+                            <ol>
+                                <li>
+                                    Create the Scheduling Channel (Name):
+                                    <ul>
+                                        <li>The channel name must follow this format: <code>n-[DAY]-[MONTH]</code></li>
+                                        <li>EXAMPLE: For a name that will change on January 1st on a server: <code>n-01-01</code></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Schedule the Change:
+                                    <ul>
+                                        <li>Edit the Channel Topic of the channel you created in step 1.</li>
+                                        <li>Write the **new server name** in the channel topic.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    Result:
+                                    <ul>
+                                        <li>The bot will automatically change the server name on the day and month specified in the channel name!</li>
+                                    </ul>
+                                </li>
+                            </ol>
     
-                    <hr>
+                            <div class="note">
+                                IMPORTANT NOTE: The change (logo OR name) is triggered when a message is sent on the server. The bot sends a discreet message itself at the beginning of the day to ensure the change happens, so you don't need to worry.
+                            </div>
+                        \`;
     
-                    <h2>Automatic Logo Change System (Manual Setup)</h2>
-                    <p>The bot monitors a specific channel to schedule and execute logo changes. Here's how to configure it manually:</p>
+                        /**
+                         * Fonction pour changer le contenu de la page
+                         * @param {string} lang - La langue à afficher ('fr' ou 'en')
+                         */
+                        function changeLanguage(lang) {
+                            const contentArea = document.getElementById('content-area');
+                            if (lang === 'fr') {
+                                contentArea.innerHTML = contentFR;
+                                document.documentElement.lang = 'fr'; // Met à jour l'attribut lang de la page
+                            } else if (lang === 'en') {
+                                contentArea.innerHTML = contentEN;
+                                document.documentElement.lang = 'en'; // Met à jour l'attribut lang de la page
+                            }
+                            // Remonte en haut de la page pour une meilleure UX
+                            window.scrollTo(0, 0);
+                        }
     
-                    <ol>
-                        <li>
-                            Create the Scheduling Channel (Logo):
-                            <ul>
-                                <li>The channel name must follow this format: <code>l-[DAY]-[MONTH]</code></li>
-                                <li>EXAMPLE: For a logo that will change on December 31st on a server: <code>l-31-12</code></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Prepare the Logo:
-                            <ul>
-                                <li>Upload your logo image to any Discord channel and copy its direct link.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Schedule the Change:
-                            <ul>
-                                <li>Edit the Channel Topic of the channel you created in step 1.</li>
-                                <li>Paste the **link** of your image into the channel topic.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Result:
-                            <ul>
-                                <li>The bot will automatically change the server logo on the day and month specified in the channel name!</li>
-                            </ul>
-                        </li>
-                    </ol>
-    
-                    <hr>
-    
-                    <h2>Automatic Name Change System (Manual Setup)</h2>
-                    <p>The bot monitors another channel to modify your server's name. Here's how to configure it manually:</p>
-    
-                    <ol>
-                        <li>
-                            Create the Scheduling Channel (Name):
-                            <ul>
-                                <li>The channel name must follow this format: <code>n-[DAY]-[MONTH]</code></li>
-                                <li>EXAMPLE: For a name that will change on January 1st on a server: <code>n-01-01</code></li>
-                            </ul>
-                        </li>
-                        <li>
-                            Schedule the Change:
-                            <ul>
-                                <li>Edit the Channel Topic of the channel you created in step 1.</li>
-                                <li>Write the **new server name** in the channel topic.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            Result:
-                            <ul>
-                                <li>The bot will automatically change the server name on the day and month specified in the channel name!</li>
-                            </ul>
-                        </li>
-                    </ol>
-    
-                    <div class="note">
-                        IMPORTANT NOTE: The change (logo OR name) is triggered when a message is sent on the server. The bot sends a discreet message itself at the beginning of the day to ensure the change happens, so you don't need to worry.
-                    </div>
-                \`;
-    
-                /**
-                 * Fonction pour changer le contenu de la page
-                 * @param {string} lang - La langue à afficher ('fr' ou 'en')
-                 */
-                function changeLanguage(lang) {
-                    const contentArea = document.getElementById('content-area');
-                    if (lang === 'fr') {
-                        contentArea.innerHTML = contentFR;
-                        document.documentElement.lang = 'fr'; // Met à jour l'attribut lang de la page
-                    } else if (lang === 'en') {
-                        contentArea.innerHTML = contentEN;
-                        document.documentElement.lang = 'en'; // Met à jour l'attribut lang de la page
-                    }
-                    // Remonte en haut de la page pour une meilleure UX
-                    window.scrollTo(0, 0);
-                }
-    
-                // Affiche le contenu français par défaut au chargement de la page
-                document.addEventListener('DOMContentLoaded', () => {
-                    changeLanguage('fr');
-                });
-            </script>
-        </body>
-        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('help.html')))
+                        // Affiche le contenu français par défaut au chargement de la page
+                        document.addEventListener('DOMContentLoaded', () => {
+                            changeLanguage('fr');
+                        });
+                    </script>
+                </body>
+                </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('help.html')))
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
@@ -565,7 +565,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     eventEmitter.on('1', async => {
           s4d.client.guilds.cache.forEach(async (s) =>{
-         (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
+         (s).channels.cache.forEach(async (c) =>{
+           if (String(((c).name)).includes(String(([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))))) {
+            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
+          }
+    
+        })
     
       })
     
