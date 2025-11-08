@@ -569,6 +569,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
            if (String(((c).name)).includes(String(([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))))) {
             (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
           }
+          return
     
         })
     
