@@ -537,6 +537,127 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('help.html')))
     
       })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/', async function(req, res) {
+          S4D_APP_write.sync(String('home.html'), String(`<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Logoto - Votre Bot d'Automatisation Discord</title>
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-height: 100vh;
+                    background-color: #36393f; /* Fond sombre Discord */
+                    color: #ffffff;
+                    text-align: center;
+                    padding: 20px;
+                    box-sizing: border-box;
+                }
+    
+                .container {
+                    max-width: 600px;
+                    width: 100%;
+                }
+    
+                .icon {
+                    width: 150px;
+                    height: 150px;
+                    border-radius: 50%; /* Icône ronde */
+                    margin-bottom: 20px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+                }
+    
+                h1 {
+                    font-size: 2.5rem;
+                    color: #7289da; /* Bleu Discord */
+                    margin-bottom: 10px;
+                }
+    
+                p.description {
+                    font-size: 1.2rem;
+                    line-height: 1.6;
+                    margin-bottom: 30px;
+                    color: #dcddde; /* Texte gris clair Discord */
+                }
+    
+                .button-container {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 15px;
+                    margin-top: 20px;
+                }
+    
+                .btn {
+                    display: inline-block;
+                    padding: 15px 30px;
+                    border-radius: 8px;
+                    text-decoration: none;
+                    font-size: 1.1rem;
+                    font-weight: bold;
+                    color: #ffffff;
+                    transition: transform 0.2s, background-color 0.2s;
+                }
+    
+                .btn:hover {
+                    transform: translateY(-2px);
+                }
+    
+                .btn-primary {
+                    background-color: #5865f2; /* Nouveau bleu Discord */
+                }
+                .btn-primary:hover {
+                    background-color: #4f5bda;
+                }
+    
+                .btn-secondary {
+                    background-color: #4f545c; /* Gris bouton Discord */
+                }
+                .btn-secondary:hover {
+                    background-color: #5d6269;
+                }
+    
+                /* Pour les écrans plus larges, mettre les boutons côte à côte */
+                @media (min-width: 600px) {
+                    .button-container {
+                        flex-direction: row;
+                        justify-content: center;
+                    }
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+                <img src="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png" alt="Icône du bot Logoto" class="icon">
+    
+                <h1>Bienvenue sur Logoto</h1>
+    
+                <p class="description">
+                    Automatisez le changement de l'icône et du nom de votre serveur Discord.
+                    Planifiez vos modifications pour des événements spéciaux, des saisons ou des célébrations, sans effort !
+                </p>
+    
+                <div class="button-container">
+                    <a href="https://discord.com/oauth2/authorize?client_id=1431383390162124920"
+                       class="btn btn-primary"
+                       target="_blank">
+                       Ajouter à Discord
+                    </a>
+    
+                    <a href="/help" class="btn btn-secondary">
+                        Comment ça marche ?
+                    </a>
+                </div>
+            </div>
+        </body>
+        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
+    
+      })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
           res.send(String('Ce bot à été créé le 24/10/2025 | https://logoto.onrender.com/help'))
     
