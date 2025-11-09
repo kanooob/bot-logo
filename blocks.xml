@@ -1223,25 +1223,16 @@
   </block>
   <block type="s4d_on_message" id="[,HHV+XdA99k=#MKqkN/" x="-3897" y="1900">
     <statement name="STATEMENTS">
-      <block type="s4d_wait_seconds" id="7#ti/jmoW[Ye1GYO6-ND">
-        <value name="TIME">
-          <shadow type="math_number" id="U`MfsN3(b{ERlC{,kYe.">
-            <field name="NUM">2</field>
+      <block type="jg_channel_get_last_messages_in_channel_then" id="cO=F*C*o8DXc)G)KncW}">
+        <value name="AMOUNT">
+          <shadow type="math_number" id="0eI(wt2/w:cgS3_]XU#7">
+            <field name="NUM">1</field>
           </shadow>
-          <block type="math_random_int" id="0~DWKp@w[]8M|:azKxO#">
-            <value name="FROM">
-              <shadow type="math_number" id="TAR+0t?hfUwQ.xRt~x~7">
-                <field name="NUM">1</field>
-              </shadow>
-            </value>
-            <value name="TO">
-              <shadow type="math_number" id="y!mf+ZF}3t)D.P01PBvq">
-                <field name="NUM">10</field>
-              </shadow>
-            </value>
-          </block>
         </value>
-        <next>
+        <value name="CHANNEL">
+          <block type="s4d_message_channel" id="E=T^_#zrJ=:go~Q0jHFM"></block>
+        </value>
+        <statement name="STATEMENTS">
           <block type="controls_if" id="RB$[Gyjre,nntk)[g9aD">
             <value name="IF0">
               <block type="logic_operation" id="X+9NGJb+^*-_Z/rW9?jW">
@@ -1300,7 +1291,18 @@
                   <block type="logic_compare" id="7s*Au:,2F]BOGsZMxKGI">
                     <field name="OP">EQ</field>
                     <value name="A">
-                      <block type="s4d_message_content" id="RJaUY=Z[5sw3{={6|k{R"></block>
+                      <block type="jg_messages_value_dropdown_content_of_message" id="}Wz6w@gSC4v77;?3e;UW">
+                        <field name="TYPE">content</field>
+                        <value name="MSG">
+                          <block type="jg_channel_last_message_number" id="p_,It$-3_91%gd{+Dz(=">
+                            <value name="INDEX">
+                              <shadow type="math_number" id=";=CAdRyMO)H6xV]|plU5">
+                                <field name="NUM">1</field>
+                              </shadow>
+                            </value>
+                          </block>
+                        </value>
+                      </block>
                     </value>
                     <value name="B">
                       <block type="jg_text_remake_paragraph_quotes" id="DOd+cO9c/rV8Q.(JtVx9">
@@ -1483,7 +1485,18 @@
                       <block type="logic_compare" id="luj$NZ;{tZ]|O)U%4.Ym">
                         <field name="OP">EQ</field>
                         <value name="A">
-                          <block type="s4d_message_content" id="DP;V-lcb!HD.Uta4Cgl,"></block>
+                          <block type="jg_messages_value_dropdown_content_of_message" id="$$=t`{`;DH$ABB?,=lT2">
+                            <field name="TYPE">content</field>
+                            <value name="MSG">
+                              <block type="jg_channel_last_message_number" id="-`fPJ{sqoatxqs1l@.cm">
+                                <value name="INDEX">
+                                  <shadow type="math_number" id="e:L_7rg_oibJwU4y]i(C">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
                         </value>
                         <value name="B">
                           <block type="jg_text_remake_paragraph_quotes" id="pB7T7Xw3*G^!xlp9`XwU">
@@ -1607,85 +1620,10 @@
                     </next>
                   </block>
                 </statement>
-                <next>
-                  <block type="controls_if" id="q)/lY2gO[(`tSdSd9WZd">
-                    <value name="IF0">
-                      <block type="logic_compare" id="J(Y{+S%!s`pySprqL*4q">
-                        <field name="OP">EQ</field>
-                        <value name="A">
-                          <block type="s4d_message_author" id="qnP;EAUM[}tE3M9YdDZ!"></block>
-                        </value>
-                        <value name="B">
-                          <block type="jg_members_get_member_by_id" id="E#PgJvcMLw%oMsB!xW]o">
-                            <value name="ID">
-                              <shadow type="text" id="~:C|z/8E^@?M@qebL-v(">
-                                <field name="TEXT">1431383390162124920</field>
-                              </shadow>
-                            </value>
-                          </block>
-                        </value>
-                      </block>
-                    </value>
-                    <statement name="DO0">
-                      <block type="jg_channel_get_last_messages_in_channel_then" id="cO=F*C*o8DXc)G)KncW}">
-                        <value name="AMOUNT">
-                          <shadow type="math_number" id="0eI(wt2/w:cgS3_]XU#7">
-                            <field name="NUM">2</field>
-                          </shadow>
-                        </value>
-                        <value name="CHANNEL">
-                          <block type="s4d_message_channel" id="E=T^_#zrJ=:go~Q0jHFM"></block>
-                        </value>
-                        <statement name="STATEMENTS">
-                          <block type="controls_if" id="`?CJ%k6/Y?2)v^rg`Xl:">
-                            <value name="IF0">
-                              <block type="s4d_ends_with" id="02iz|6!A;F#eA%p@6(.H">
-                                <value name="STRING">
-                                  <shadow type="text" id="A$_U}|qHJ}~aVe?G}[~w">
-                                    <field name="TEXT">abc</field>
-                                  </shadow>
-                                  <block type="jg_messages_value_dropdown_content_of_message" id="}Wz6w@gSC4v77;?3e;UW">
-                                    <field name="TYPE">content</field>
-                                    <value name="MSG">
-                                      <block type="jg_channel_last_message_number" id="p_,It$-3_91%gd{+Dz(=">
-                                        <value name="INDEX">
-                                          <shadow type="math_number" id=";=CAdRyMO)H6xV]|plU5">
-                                            <field name="NUM">2</field>
-                                          </shadow>
-                                        </value>
-                                      </block>
-                                    </value>
-                                  </block>
-                                </value>
-                                <value name="SUBSTRING">
-                                  <shadow type="text" id="``MWM{ei~la/?5Jnj[l?">
-                                    <field name="TEXT">du serveurs changé.</field>
-                                  </shadow>
-                                </value>
-                              </block>
-                            </value>
-                            <statement name="DO0">
-                              <block type="s4d_purge" id="g3U@_nRc.bNTXU+FeW*8">
-                                <value name="CHANNEL">
-                                  <block type="s4d_message_channel" id=",aS}kNIsg/LqA2cIA4Sl"></block>
-                                </value>
-                                <value name="AMOUNT">
-                                  <shadow type="math_number" id="}8|u:IgUC+Zw@wU)3[jE">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                </value>
-                              </block>
-                            </statement>
-                          </block>
-                        </statement>
-                      </block>
-                    </statement>
-                  </block>
-                </next>
               </block>
             </next>
           </block>
-        </next>
+        </statement>
       </block>
     </statement>
   </block>
@@ -1816,9 +1754,6 @@
                         </value>
                       </block>
                     </value>
-                    <next>
-                      <block type="s4d_return" id="r-m]^`EQU+/AoAj1j[Dq"></block>
-                    </next>
                   </block>
                 </statement>
                 <next>

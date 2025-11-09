@@ -96,16 +96,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     // blockly code
     var jour, ms_on;
     
-    function mathRandomInt(a, b) {
-      if (a > b) {
-        // Swap a and b to ensure a is smaller.
-        var c = a;
-        a = b;
-        b = c;
-      }
-      return Math.floor(Math.random() * (b - a + 1) + a);
-    }
-    
     
     await s4d.client.login((process.env[String('token')])).catch((e) => {
             const tokenInvalid = true;
@@ -555,27 +545,21 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
     s4d.client.on('messageCreate', async (s4dmessage) => {
-      await delay(Number((mathRandomInt(1, 10)))*1000);
-      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) == '🔄 Loading') {
-        (s4dmessage.guild).setIcon(((s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
+      (s4dmessage.channel).messages.fetch({ limit: 1 }).then(async (last_messages_in_channel) => {
+            if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && ((last_messages_in_channel.at(1 - 1)).content) == '🔄 Loading') {
+          (s4dmessage.guild).setIcon(((s4dmessage.guild).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
     
-        s4dmessage.channel.send({content:String('✅ Logo du serveurs changé.')});
-        console.log((['Logo du serveur ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
-      }
-      if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && (s4dmessage.content) == '🔄 Loading') {
-        (s4dmessage.guild).setName(((s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
+          s4dmessage.channel.send({content:String('✅ Logo du serveurs changé.')});
+          console.log((['Logo du serveur ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
+        }
+        if ((typeof (s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && ((last_messages_in_channel.at(1 - 1)).content) == '🔄 Loading') {
+          (s4dmessage.guild).setName(((s4dmessage.guild).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
     
-        s4dmessage.channel.send({content:String('✅ Nom du serveurs changé.')});
-        console.log((['Nom du serveur ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
-      }
-      if ((s4dmessage.author) == (s4d.client.users.cache.get(String('1431383390162124920')))) {
-        (s4dmessage.channel).messages.fetch({ limit: 2 }).then(async (last_messages_in_channel) => {
-              if ((((last_messages_in_channel.at(2 - 1)).content) || '').endsWith('du serveurs changé.' || '')) {
-            (s4dmessage.channel).bulkDelete((1|1));
-          }
+          s4dmessage.channel.send({content:String('✅ Nom du serveurs changé.')});
+          console.log((['Nom du serveur ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
+        }
     
-        });
-      }
+      });
     
     });
     
@@ -589,7 +573,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
          (s).channels.cache.forEach(async (c) =>{
            if (String(((c).name)).includes(String(([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))))) {
             (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
-            return
           }
           await delay(Number(1)*1000);
     
