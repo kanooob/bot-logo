@@ -557,6 +557,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         s4dmessage.channel.send({content:String('✅ Nom du serveurs changé.')});
         console.log((['Nom du serveur ',(s4dmessage.guild).name,' (',(s4dmessage.guild).id,').'].join('')));
       }
+      if ((s4dmessage.author) == (s4d.client.users.cache.get(String('1431383390162124920')))) {
+        (s4dmessage.channel).messages.fetch({ limit: 4 }).then(async (last_messages_in_channel) => {
+              if ((((last_messages_in_channel.at(4 - 1)).content) || '').endsWith('du serveurs changé.' || '')) {
+            (s4dmessage.channel).bulkDelete((2|1));
+          }
+    
+        });
+      }
     
     });
     
@@ -572,7 +580,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('🔄 Loading')});
             return
           }
-          await delay(Number(0.5)*1000);
+          await delay(Number(1)*1000);
     
         })
     
