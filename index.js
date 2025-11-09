@@ -723,6 +723,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
       })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
+          S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
+        Disallow: /blocks.xml
+        Disallow: /index.js`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
+    
+      })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
           S4D_APP_write.sync(String('404.html'), String(`<!DOCTYPE html>
         <html lang="fr">
