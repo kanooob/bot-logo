@@ -1255,7 +1255,7 @@
                     </value>
                     <value name="fileContent">
                       <block type="jg_text_remake_paragraph_quotes" id="F7SQa+@v]}9]npA,[EG+">
-                        <field name="TEXT">User-agent: *&amp;#10;Disallow: /blocks.xml&amp;#10;Disallow: /index.js</field>
+                        <field name="TEXT">User-agent: *&amp;#10;Allow: /&amp;#10;Disallow: /blocks.xml&amp;#10;Disallow: /index.js</field>
                       </block>
                     </value>
                     <next>

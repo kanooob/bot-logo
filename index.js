@@ -725,6 +725,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
           S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
+        Allow: /
         Disallow: /blocks.xml
         Disallow: /index.js`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
     
