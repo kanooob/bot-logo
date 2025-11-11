@@ -266,6 +266,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -610,6 +611,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="google-site-verification" content="u2mt1kkF8HLYxuULsxpdU7e8dJKFjj0ItJ6IPLcs23s" />
             <title>Logoto - Votre Bot d'Automatisation Discord</title>
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -755,6 +757,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>404 - Page Non Trouvée | Logoto</title>
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
