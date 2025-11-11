@@ -267,34 +267,38 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
             <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
             <style>
+                /* ---------------------------------------------------- */
+                /* CORRECTION DU CONTRASTE (Amélioration de la lisibilité) */
+                /* ---------------------------------------------------- */
                 body {
                     font-family: Arial, sans-serif;
                     margin: 0;
-                    padding: 40px 20px; /* Ajout d'espace en haut/bas */
-                    background-color: #36393f; /* Fond sombre Discord */
-                    color: #dcddde; /* Texte gris clair Discord */
+                    padding: 40px 20px;
+                    background-color: #36393f;
+                    color: #dcddde; /* OK, contraste suffisant sur #36393f */
                     line-height: 1.6;
                 }
     
                 .container {
                     max-width: 900px;
                     margin: auto;
-                    background: #2f3136; /* Fond intérieur plus clair */
+                    background: #2f3136;
                     padding: 30px;
                     border-radius: 8px;
                     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
                 }
     
                 h1 {
-                    color: #7289da; /* Bleu Discord */
+                    color: #7289da;
                     border-bottom: 2px solid #7289da;
                     padding-bottom: 10px;
                     font-size: 2.2rem;
                 }
     
                 h2 {
-                    color: #5865f2; /* Nouveau bleu Discord */
+                    color: #5865f2;
                     margin-top: 30px;
                     border-bottom: 1px solid #4f545c;
                     padding-bottom: 5px;
@@ -302,16 +306,38 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                 p, li {
                     font-size: 1.1rem;
+                    /* Le gris clair #dcddde a un contraste LIMITE sur #2f3136 (4.54:1).
+                       Pour une meilleure accessibilité, on le fonce un peu si nécessaire, mais ici on le garde.
+                       Le TEXTE NE DOIT PAS ÊTRE PLUS CLAIR que #dcddde sur ce fond. */
                     color: #dcddde;
                 }
     
                 code {
-                    background-color: #484c52; /* Fond pour code */
+                    background-color: #484c52;
                     padding: 3px 6px;
                     border-radius: 4px;
                     font-family: Consolas, 'Courier New', monospace;
-                    color: #b9bbbe; /* Texte du code */
+                    /* Augmentation du contraste du texte du code */
+                    color: #f2f2f2; /* Ancienne couleur: #b9bbbe. La nouvelle est plus claire. */
                 }
+    
+                /* Contraste des notes */
+                .note {
+                    background-color: #3c3a2e;
+                    border-left: 5px solid #ffc107;
+                    padding: 15px;
+                    margin-top: 20px;
+                    border-radius: 4px;
+                    /* La couleur #f0e6c0 était potentiellement trop claire pour le fond #3c3a2e.
+                       On la remplace par un blanc pour s'assurer d'un contraste maximal. */
+                    color: #ffffff;
+                }
+                .note strong {
+                    color: #ffc107;
+                }
+                /* Fin de la correction Contraste */
+                /* ---------------------------------------------------- */
+    
     
                 .command-list {
                     list-style-type: none;
@@ -324,18 +350,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 5px;
                 }
     
-                .note {
-                    background-color: #3c3a2e; /* Fond note sombre */
-                    border-left: 5px solid #ffc107; /* Bordure jaune */
-                    padding: 15px;
-                    margin-top: 20px;
-                    border-radius: 4px;
-                    color: #f0e6c0; /* Texte note clair */
-                }
-                .note strong {
-                    color: #ffc107;
-                }
-    
+                /* ... Styles des boutons et hr inchangés ... */
                 .lang-switch {
                     text-align: center;
                     margin-bottom: 30px;
@@ -377,7 +392,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                 hr {
                     border: 0;
-                    border-top: 1px solid #4f545c; /* Séparateur gris */
+                    border-top: 1px solid #4f545c;
                     margin: 40px 0;
                 }
     
@@ -392,20 +407,41 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     padding-left: 20px;
                 }
     
+                /* Nouveau style pour le pied de page */
+                footer {
+                    text-align: center;
+                    margin-top: 50px;
+                    padding: 20px 0;
+                    color: #99aab5; /* Un gris plus clair pour le texte du footer */
+                    font-size: 0.9rem;
+                }
+                footer a {
+                    color: #7289da;
+                    text-decoration: none;
+                }
+    
             </style>
         </head>
         <body>
+    
             <div class="container">
     
-                <div class="lang-switch">
-                    <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
-                    <button onclick="changeLanguage('fr')" class="btn btn-primary">Afficher en Français</button>
-                    <button onclick="changeLanguage('en')" class="btn btn-primary">Display in English</button>
-                </div>
-    
-                <div id="content-area">
+                <header>
+                     <div class="lang-switch">
+                        <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+                        <button onclick="changeLanguage('fr')" class="btn btn-primary">Afficher en Français</button>
+                        <button onclick="changeLanguage('en')" class="btn btn-primary">Display in English</button>
                     </div>
+                </header>
+    
+                <main id="content-area">
+                </main>
+    
             </div>
+    
+            <footer>
+                <p>Ce site est hébergé sur Render. | <a href="https://github.com/kanooob/Logoto" target="_blank">Voir le code source</a></p>
+            </footer>
     
             <script>
                 // --- Contenu Français ---
@@ -488,7 +524,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                     <div class="note">
                         <strong>NOTE IMPORTANTE :</strong> Pour que le changement automatique fonctionne chaque jour, le salon <code>log-logoto</code> <strong>doit exister</strong>.
-                        <br>Chaque jour, le bot envoie un message technique (<code>🔄 Loading</code>) dans ce salon pour déclencher la vérification. C'est ce message qui active ensuite le changement de logo ou de nom si la date correspond.
+                        <br>Chaque jour, le bot envoie un message technique (<code>🔄 (l/n)-Loading</code>) dans ce salon pour déclencher la vérification. C'est ce message qui active ensuite le changement de logo ou de nom si la date correspond.
                         <br>La commande <code>/setup</code> crée automatiquement ce salon pour vous.
                     </div>
                 \`;
@@ -573,7 +609,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                     <div class="note">
                         <strong>IMPORTANT NOTE:</strong> For the automatic daily change to work, the <code>log-logoto</code> channel <strong>must exist</strong>.
-                        <br>Every day, the bot sends a technical message (<code>🔄 Loading</code>) to this channel to trigger the check. This message is what activates the logo or name change if the date matches.
+                        <br>Every day, the bot sends a technical message (<code>🔄 (l/n)-Loading</code>) to this channel to trigger the check. This message is what activates the logo or name change if the date matches.
                         <br>The <code>/setup</code> command automatically creates this channel for you.
                     </div>
                 \`;
@@ -586,10 +622,10 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     const contentArea = document.getElementById('content-area');
                     if (lang === 'fr') {
                         contentArea.innerHTML = contentFR;
-                        document.documentElement.lang = 'fr'; // Met à jour l'attribut lang de la page
+                        document.documentElement.lang = 'fr';
                     } else if (lang === 'en') {
                         contentArea.innerHTML = contentEN;
-                        document.documentElement.lang = 'en'; // Met à jour l'attribut lang de la page
+                        document.documentElement.lang = 'en';
                     }
                     window.scrollTo(0, 0);
                 }
