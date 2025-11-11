@@ -1270,31 +1270,65 @@
                   </block>
                 </statement>
                 <next>
-                  <block type="jg_express_website_on_invalid_request_do" id="(-.L:frPrZccp8?gJh5%">
+                  <block type="jg_express_website_on_page_on_request_type_do" id="dY]}j,ZGz_ba[,%vgb%u">
+                    <field name="TYPE">all</field>
+                    <value name="PAGE">
+                      <shadow type="text" id="36mih6.=dfUCr/F4IJx-">
+                        <field name="TEXT">/sitemap.xml</field>
+                      </shadow>
+                    </value>
                     <statement name="STATEMENTS">
-                      <block type="jg_file_create" id="^az5u%Kpf.:PhiHkcG_P">
+                      <block type="jg_file_create" id="b6a/@U_!T(+814w/Byf!">
                         <field name="truefalse">true</field>
                         <value name="fileName">
-                          <block type="jg_text_remake_paragraph_quotes" id="fB/H.3-WVxREt0gz@oQ(">
-                            <field name="TEXT">404.html</field>
+                          <block type="jg_text_remake_paragraph_quotes" id="lK`Dfy@.p]vl24WMyWa.">
+                            <field name="TEXT">sitemap.xml</field>
                           </block>
                         </value>
                         <value name="fileContent">
-                          <block type="jg_text_remake_paragraph_quotes" id="`%Y/moQm#Hf,tOY7wB,2">
-                            <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;404 - Page Non Trouvée | Logoto&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            margin: 0;&amp;#10;            padding: 0;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            min-height: 100vh;&amp;#10;            background-color: #36393f; /* Fond sombre Discord */&amp;#10;            color: #ffffff;&amp;#10;            text-align: center;&amp;#10;            padding: 20px;&amp;#10;            box-sizing: border-box;&amp;#10;        }&amp;#10;&amp;#10;        .container {&amp;#10;            max-width: 500px;&amp;#10;            width: 100%;&amp;#10;            background: #2f3136; /* Fond intérieur */&amp;#10;            padding: 40px;&amp;#10;            border-radius: 8px;&amp;#10;            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);&amp;#10;        }&amp;#10;&amp;#10;        .status-code {&amp;#10;            font-size: 8rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #7289da; /* Bleu Discord */&amp;#10;            margin-bottom: 5px;&amp;#10;            line-height: 1;&amp;#10;        }&amp;#10;&amp;#10;        h1 {&amp;#10;            font-size: 1.8rem;&amp;#10;            color: #dcddde;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;&amp;#10;        p {&amp;#10;            font-size: 1.1rem;&amp;#10;            line-height: 1.6;&amp;#10;            margin-bottom: 30px;&amp;#10;            color: #b9bbbe;&amp;#10;        }&amp;#10;&amp;#10;        .button-container {&amp;#10;            display: flex;&amp;#10;            flex-direction: column;&amp;#10;            gap: 15px;&amp;#10;            margin-top: 20px;&amp;#10;        }&amp;#10;&amp;#10;        .btn {&amp;#10;            display: inline-block;&amp;#10;            padding: 12px 25px;&amp;#10;            border-radius: 8px;&amp;#10;            text-decoration: none;&amp;#10;            font-size: 1rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #ffffff;&amp;#10;            transition: transform 0.2s, background-color 0.2s;&amp;#10;        }&amp;#10;&amp;#10;        .btn:hover {&amp;#10;            transform: translateY(-2px);&amp;#10;        }&amp;#10;&amp;#10;        .btn-primary {&amp;#10;            background-color: #5865f2; /* Nouveau bleu Discord */&amp;#10;        }&amp;#10;        .btn-primary:hover {&amp;#10;            background-color: #4f5bda;&amp;#10;        }&amp;#10;&amp;#10;        .btn-secondary {&amp;#10;            background-color: #4f545c; /* Gris bouton Discord */&amp;#10;        }&amp;#10;        .btn-secondary:hover {&amp;#10;            background-color: #5d6269;&amp;#10;        }&amp;#10;&amp;#10;        /* Pour les écrans plus larges, mettre les boutons côte à côte */&amp;#10;        @media (min-width: 400px) {&amp;#10;            .button-container {&amp;#10;                flex-direction: row;&amp;#10;                justify-content: center;&amp;#10;            }&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;div class="status-code"&gt;404&lt;/div&gt;&amp;#10;        &amp;#10;        &lt;h1&gt;Oups, cette page a disparu.&lt;/h1&gt;&amp;#10;        &amp;#10;        &lt;p&gt;&amp;#10;            Désolé, mais nous n'avons pas trouvé la page que vous cherchiez. &amp;#10;            Veuillez utiliser les boutons ci-dessous pour revenir à une zone connue.&amp;#10;        &lt;/p&gt;&amp;#10;        &amp;#10;        &lt;div class="button-container"&gt;&amp;#10;            &lt;a href="/" class="btn btn-primary"&gt;&amp;#10;                Retour à l'Accueil&amp;#10;            &lt;/a&gt;&amp;#10;            &amp;#10;            &lt;a href="/help" class="btn btn-secondary"&gt;&amp;#10;                Accéder à l'Aide&amp;#10;            &lt;/a&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                          <block type="jg_text_remake_paragraph_quotes" id="0D:E52pJ:.g?%HJL|pMS">
+                            <field name="TEXT">&lt;?xml version="1.0" encoding="UTF-8"?&gt;&amp;#10;&lt;urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"&gt;&amp;#10;&amp;#10;&lt;url&gt;&amp;#10;  &lt;loc&gt;https://logoto.onrender.com/&lt;/loc&gt;&amp;#10;  &lt;priority&gt;1.00&lt;/priority&gt;&amp;#10;&lt;/url&gt;&amp;#10;&lt;url&gt;&amp;#10;  &lt;loc&gt;https://logoto.onrender.com/help&lt;/loc&gt;&amp;#10;  &lt;priority&gt;0.80&lt;/priority&gt;&amp;#10;&lt;/url&gt;&amp;#10;&amp;#10;&lt;/urlset&gt;</field>
                           </block>
                         </value>
                         <next>
-                          <block type="jg_express_website_respond_with_file" id="f:A#^`l-T.f,xpIX9_0%">
+                          <block type="jg_express_website_respond_with_file" id="Hka0BxKgcx);aHgtsfFA">
                             <value name="TEXT">
-                              <shadow type="text" id="mU7Pw~fptQ4C_~Vqx.H=">
-                                <field name="TEXT">404.html</field>
+                              <shadow type="text" id="|ILB1uR|3qFK`*FVl(qP">
+                                <field name="TEXT">sitemap.xml</field>
                               </shadow>
                             </value>
                           </block>
                         </next>
                       </block>
                     </statement>
+                    <next>
+                      <block type="jg_express_website_on_invalid_request_do" id="(-.L:frPrZccp8?gJh5%">
+                        <statement name="STATEMENTS">
+                          <block type="jg_file_create" id="^az5u%Kpf.:PhiHkcG_P">
+                            <field name="truefalse">true</field>
+                            <value name="fileName">
+                              <block type="jg_text_remake_paragraph_quotes" id="fB/H.3-WVxREt0gz@oQ(">
+                                <field name="TEXT">404.html</field>
+                              </block>
+                            </value>
+                            <value name="fileContent">
+                              <block type="jg_text_remake_paragraph_quotes" id="`%Y/moQm#Hf,tOY7wB,2">
+                                <field name="TEXT">&lt;!DOCTYPE html&gt;&amp;#10;&lt;html lang="fr"&gt;&amp;#10;&lt;head&gt;&amp;#10;    &lt;meta charset="UTF-8"&gt;&amp;#10;    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;&amp;#10;    &lt;title&gt;404 - Page Non Trouvée | Logoto&lt;/title&gt;&amp;#10;    &lt;style&gt;&amp;#10;        body {&amp;#10;            font-family: Arial, sans-serif;&amp;#10;            margin: 0;&amp;#10;            padding: 0;&amp;#10;            display: flex;&amp;#10;            justify-content: center;&amp;#10;            align-items: center;&amp;#10;            min-height: 100vh;&amp;#10;            background-color: #36393f; /* Fond sombre Discord */&amp;#10;            color: #ffffff;&amp;#10;            text-align: center;&amp;#10;            padding: 20px;&amp;#10;            box-sizing: border-box;&amp;#10;        }&amp;#10;&amp;#10;        .container {&amp;#10;            max-width: 500px;&amp;#10;            width: 100%;&amp;#10;            background: #2f3136; /* Fond intérieur */&amp;#10;            padding: 40px;&amp;#10;            border-radius: 8px;&amp;#10;            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);&amp;#10;        }&amp;#10;&amp;#10;        .status-code {&amp;#10;            font-size: 8rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #7289da; /* Bleu Discord */&amp;#10;            margin-bottom: 5px;&amp;#10;            line-height: 1;&amp;#10;        }&amp;#10;&amp;#10;        h1 {&amp;#10;            font-size: 1.8rem;&amp;#10;            color: #dcddde;&amp;#10;            margin-bottom: 20px;&amp;#10;        }&amp;#10;&amp;#10;        p {&amp;#10;            font-size: 1.1rem;&amp;#10;            line-height: 1.6;&amp;#10;            margin-bottom: 30px;&amp;#10;            color: #b9bbbe;&amp;#10;        }&amp;#10;&amp;#10;        .button-container {&amp;#10;            display: flex;&amp;#10;            flex-direction: column;&amp;#10;            gap: 15px;&amp;#10;            margin-top: 20px;&amp;#10;        }&amp;#10;&amp;#10;        .btn {&amp;#10;            display: inline-block;&amp;#10;            padding: 12px 25px;&amp;#10;            border-radius: 8px;&amp;#10;            text-decoration: none;&amp;#10;            font-size: 1rem;&amp;#10;            font-weight: bold;&amp;#10;            color: #ffffff;&amp;#10;            transition: transform 0.2s, background-color 0.2s;&amp;#10;        }&amp;#10;&amp;#10;        .btn:hover {&amp;#10;            transform: translateY(-2px);&amp;#10;        }&amp;#10;&amp;#10;        .btn-primary {&amp;#10;            background-color: #5865f2; /* Nouveau bleu Discord */&amp;#10;        }&amp;#10;        .btn-primary:hover {&amp;#10;            background-color: #4f5bda;&amp;#10;        }&amp;#10;&amp;#10;        .btn-secondary {&amp;#10;            background-color: #4f545c; /* Gris bouton Discord */&amp;#10;        }&amp;#10;        .btn-secondary:hover {&amp;#10;            background-color: #5d6269;&amp;#10;        }&amp;#10;&amp;#10;        /* Pour les écrans plus larges, mettre les boutons côte à côte */&amp;#10;        @media (min-width: 400px) {&amp;#10;            .button-container {&amp;#10;                flex-direction: row;&amp;#10;                justify-content: center;&amp;#10;            }&amp;#10;        }&amp;#10;    &lt;/style&gt;&amp;#10;&lt;/head&gt;&amp;#10;&lt;body&gt;&amp;#10;    &lt;div class="container"&gt;&amp;#10;        &lt;div class="status-code"&gt;404&lt;/div&gt;&amp;#10;        &amp;#10;        &lt;h1&gt;Oups, cette page a disparu.&lt;/h1&gt;&amp;#10;        &amp;#10;        &lt;p&gt;&amp;#10;            Désolé, mais nous n'avons pas trouvé la page que vous cherchiez. &amp;#10;            Veuillez utiliser les boutons ci-dessous pour revenir à une zone connue.&amp;#10;        &lt;/p&gt;&amp;#10;        &amp;#10;        &lt;div class="button-container"&gt;&amp;#10;            &lt;a href="/" class="btn btn-primary"&gt;&amp;#10;                Retour à l'Accueil&amp;#10;            &lt;/a&gt;&amp;#10;            &amp;#10;            &lt;a href="/help" class="btn btn-secondary"&gt;&amp;#10;                Accéder à l'Aide&amp;#10;            &lt;/a&gt;&amp;#10;        &lt;/div&gt;&amp;#10;    &lt;/div&gt;&amp;#10;&lt;/body&gt;&amp;#10;&lt;/html&gt;</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="jg_express_website_respond_with_file" id="f:A#^`l-T.f,xpIX9_0%">
+                                <value name="TEXT">
+                                  <shadow type="text" id="mU7Pw~fptQ4C_~Vqx.H=">
+                                    <field name="TEXT">404.html</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
+                          </block>
+                        </statement>
+                      </block>
+                    </next>
                   </block>
                 </next>
               </block>

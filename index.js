@@ -730,6 +730,22 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         Disallow: /index.js`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
     
       })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/sitemap.xml', async function(req, res) {
+          S4D_APP_write.sync(String('sitemap.xml'), String(`<?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+          <loc>https://logoto.onrender.com/</loc>
+          <priority>1.00</priority>
+        </url>
+        <url>
+          <loc>https://logoto.onrender.com/help</loc>
+          <priority>0.80</priority>
+        </url>
+    
+        </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
+    
+      })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
           S4D_APP_write.sync(String('404.html'), String(`<!DOCTYPE html>
         <html lang="fr">
