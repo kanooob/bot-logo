@@ -266,7 +266,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
-            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
+            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
     
             <style>
                 /* ---------------------------------------------------- */
@@ -652,7 +652,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="google-site-verification" content="u2mt1kkF8HLYxuULsxpdU7e8dJKFjj0ItJ6IPLcs23s" />
             <title>Logoto - Votre Bot d'Automatisation Discord</title>
-            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
+            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -742,7 +742,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </head>
         <body>
             <div class="container">
-                <img src="https://lh3.googleusercontent.com/M8l8KPuNrythRFfTfBmw_5aMdA2qbHGf2wvYE1isX1Y8i9C0lOQy7boyPZVlXGZwu5yOtpM3UlU6nT9kkbv8-KI" alt="Icône du bot Logoto" class="icon">
+                <img src="https://cdn.discordapp.com/attachments/1437844498737533002/1437844733245526118/Logoto.png?ex=6914b8c2&is=69136742&hm=ac0ce683fc8672ceee9973a4484e5ccc8dcd622a14954be4e2e9e078048e58c3&" alt="Icône du bot Logoto" class="icon">
     
                 <h1>Bienvenue sur Logoto</h1>
     
@@ -798,7 +798,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>404 - Page Non Trouvée | Logoto</title>
-            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
+            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
             <style>
                 body {
                     font-family: Arial, sans-serif;
