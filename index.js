@@ -266,7 +266,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
-            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
     
             <style>
                 /* ---------------------------------------------------- */
@@ -652,7 +652,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta name="google-site-verification" content="u2mt1kkF8HLYxuULsxpdU7e8dJKFjj0ItJ6IPLcs23s" />
             <title>Logoto - Votre Bot d'Automatisation Discord</title>
-            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -742,7 +742,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </head>
         <body>
             <div class="container">
-                <img src="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png" alt="Icône du bot Logoto" class="icon">
+                <img src="https://lh3.googleusercontent.com/M8l8KPuNrythRFfTfBmw_5aMdA2qbHGf2wvYE1isX1Y8i9C0lOQy7boyPZVlXGZwu5yOtpM3UlU6nT9kkbv8-KI" alt="Icône du bot Logoto" class="icon">
     
                 <h1>Bienvenue sur Logoto</h1>
     
@@ -798,7 +798,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>404 - Page Non Trouvée | Logoto</title>
-            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+            <link rel="icon" type="image/png" href="https://lh3.googleusercontent.com/_kv5f0rdRhClKfzfSL2xgT25oPADwCIPKSZNRMvnnxqh3TYSt8GXq-k2aSKEvxvalHGC0fMD39sNd9RN4e6Rv7U">
             <style>
                 body {
                     font-family: Arial, sans-serif;
