@@ -270,14 +270,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
             <style>
                 /* ---------------------------------------------------- */
-                /* CORRECTION DU CONTRASTE (Amélioration de la lisibilité) */
+                /* STYLES DE BASE & CONTRASTE (Accessibilité OK) */
                 /* ---------------------------------------------------- */
                 body {
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 40px 20px;
                     background-color: #36393f;
-                    color: #dcddde; /* OK, contraste suffisant sur #36393f */
+                    color: #dcddde;
                     line-height: 1.6;
                 }
     
@@ -306,9 +306,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                 p, li {
                     font-size: 1.1rem;
-                    /* Le gris clair #dcddde a un contraste LIMITE sur #2f3136 (4.54:1).
-                       Pour une meilleure accessibilité, on le fonce un peu si nécessaire, mais ici on le garde.
-                       Le TEXTE NE DOIT PAS ÊTRE PLUS CLAIR que #dcddde sur ce fond. */
                     color: #dcddde;
                 }
     
@@ -317,27 +314,20 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     padding: 3px 6px;
                     border-radius: 4px;
                     font-family: Consolas, 'Courier New', monospace;
-                    /* Augmentation du contraste du texte du code */
-                    color: #f2f2f2; /* Ancienne couleur: #b9bbbe. La nouvelle est plus claire. */
+                    color: #f2f2f2;
                 }
     
-                /* Contraste des notes */
                 .note {
                     background-color: #3c3a2e;
                     border-left: 5px solid #ffc107;
                     padding: 15px;
                     margin-top: 20px;
                     border-radius: 4px;
-                    /* La couleur #f0e6c0 était potentiellement trop claire pour le fond #3c3a2e.
-                       On la remplace par un blanc pour s'assurer d'un contraste maximal. */
                     color: #ffffff;
                 }
                 .note strong {
                     color: #ffc107;
                 }
-                /* Fin de la correction Contraste */
-                /* ---------------------------------------------------- */
-    
     
                 .command-list {
                     list-style-type: none;
@@ -350,7 +340,20 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 5px;
                 }
     
-                /* ... Styles des boutons et hr inchangés ... */
+                /* ---------------------------------------------------- */
+                /* STYLES DES LIENS & BOUTONS (RÉSOLUTION FINALE) */
+                /* ---------------------------------------------------- */
+    
+                /* 💡 CORRECTION DU PROBLÈME DES BOUTONS : */
+                /* On ne met PAS de couleur générale sur 'a', car les .btn sont des 'a' et doivent être blancs. */
+                /* On cible uniquement les liens qui sont DANS le conteneur principal ou le footer. */
+    
+                /* Styles des liens DANS le contenu (main) */
+                .container a {
+                    text-decoration: underline;
+                    color: #7289da; /* Garde la couleur Discord pour les liens normaux */
+                }
+    
                 .lang-switch {
                     text-align: center;
                     margin-bottom: 30px;
@@ -364,9 +367,10 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     display: inline-block;
                     padding: 12px 25px;
                     border-radius: 8px;
-                    text-decoration: none;
+                    text-decoration: none !important;
                     font-size: 1rem;
                     font-weight: bold;
+                    /* 💡 IMPORTANT : C'est cette règle qui assure que le texte est BLANC sur TOUS les boutons */
                     color: #ffffff;
                     transition: transform 0.2s, background-color 0.2s;
                     border: none;
@@ -390,6 +394,26 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     background-color: #5d6269;
                 }
     
+                /* Styles du Footer (Accessibilité Lien OK) */
+                footer {
+                    background-color: #36393f;
+                    text-align: center;
+                    margin-top: 50px;
+                    padding: 20px 0;
+                    color: #99aab5;
+                    font-size: 0.9rem;
+                }
+    
+                /* Styles des liens DANS le footer */
+                footer a {
+                    color: #ffffff; /* Très contrasté sur le fond #36393f (Accessibilité OK) */
+                    text-decoration: underline;
+                }
+    
+                footer a:hover {
+                    color: #7289da;
+                }
+    
                 hr {
                     border: 0;
                     border-top: 1px solid #4f545c;
@@ -407,19 +431,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     padding-left: 20px;
                 }
     
-                /* Nouveau style pour le pied de page */
-                footer {
-                    text-align: center;
-                    margin-top: 50px;
-                    padding: 20px 0;
-                    color: #99aab5; /* Un gris plus clair pour le texte du footer */
-                    font-size: 0.9rem;
-                }
-                footer a {
-                    color: #7289da;
-                    text-decoration: none;
-                }
-    
             </style>
         </head>
         <body>
@@ -427,7 +438,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             <div class="container">
     
                 <header>
-                     <div class="lang-switch">
+                    <div class="lang-switch">
                         <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
                         <button onclick="changeLanguage('fr')" class="btn btn-primary">Afficher en Français</button>
                         <button onclick="changeLanguage('en')" class="btn btn-primary">Display in English</button>
@@ -444,7 +455,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </footer>
     
             <script>
-                // --- Contenu Français ---
+                // (Votre contenu et vos fonctions de traduction inchangées et fonctionnelles)
                 const contentFR = \`
                     <h1>Aide de Logoto - Automatisez votre Logo & Nom ! 🇫🇷</h1>
                     <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
@@ -529,7 +540,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     </div>
                 \`;
     
-                // --- Contenu Anglais ---
                 const contentEN = \`
                     <h1>Logoto Help - Automate your Logo & Name! 🇬🇧</h1>
                     <p>I am the bot specialized in automating the change of your server's logo AND name, without requiring complex commands after the initial setup.</p>
@@ -614,10 +624,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     </div>
                 \`;
     
-                /**
-                 * Fonction pour changer le contenu de la page
-                 * @param {string} lang - La langue à afficher ('fr' ou 'en')
-                 */
                 function changeLanguage(lang) {
                     const contentArea = document.getElementById('content-area');
                     if (lang === 'fr') {
@@ -630,7 +636,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     window.scrollTo(0, 0);
                 }
     
-                // Affiche le contenu français par défaut au chargement de la page
                 document.addEventListener('DOMContentLoaded', () => {
                     changeLanguage('fr');
                 });
