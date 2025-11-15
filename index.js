@@ -188,6 +188,51 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     });
     
+    s4d.client.on('interactionCreate', async (interaction) => {
+              if ((interaction.commandName) == 'setup' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**It's almost over!**
+            All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL.`,'\n','\n',`**C'est bientôt fini !**
+            Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord.`].join('')))});
+            await interaction.reply({ content: (['The change channel is :',cat,' :est le salon de changement.'].join('')), ephemeral: true, components: [] });
+          });(interaction.guild).channels.create('log-logoto', { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Log room has been created**
+            You will find the actions performed by the bot in this room.`,'\n','\n',`**Salon des log à été créé**
+            Vous obtiendrez les actions de changement du serveur fait par le bot dans se salon.`].join('')))});
+          });});
+      } else if ((interaction.commandName) == 'setup' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
+      }
+      if ((interaction.commandName) == 'help') {
+        await interaction.reply({ content: (['Aide de Logoto - Automatisez votre Logo !','\n','====================================','\n','**Je suis le bot spécialisé dans l\'automatisation du changement de logo de votre serveur, sans nécessiter de commandes complexes après la configuration.**','\n','###','\n','Les commandes','\n','* **`/setup`** : Crée les salons nécessaires (Logoto, log-logoto) pour un démarrage rapide et pour comprendre le fonctionnement.','\n','* **`/logo-add`** : Crée un salon de changement de logo avec les options day (Obligatoire, pour le jour), month (Obligatoire, pour le mois).','\n','* **`/name-add`** : Crée un salon de changement de nom avec les options day (Obligatoire, pour le jour), month (Obligatoire, pour le mois).','\n','* **`/help`** : Affiche ce message d\'aide.','\n','* **`/invite`** : Invitez le bot dans votre serveurs.','\n','* **`/support`** : Rejoigniez le serveur de support.','\n','Pour l\'aide complète :[Ici](https://logoto.onrender.com/help)','\n','For english help :[Here](https://logoto.onrender.com/help)'].join('')), ephemeral: false, components: [] });
+      }
+      if ((interaction.commandName) == 'invite') {
+        await interaction.reply({ content: (['➕ Here is the link to add the bot: [link](https://discord.com/oauth2/authorize?client_id=1431383390162124920)','\n','\n','➕ Voici le lien d\'invitation du bot Discord :[lien](https://discord.com/oauth2/authorize?client_id=1431383390162124920)'].join('')), ephemeral: false, components: [] });
+      }
+      if ((interaction.commandName) == 'ping') {
+        await interaction.reply({ content: (['🏓 Pong !**','\n',s4d.client.ws.ping,'**ms.','\n','[Status page](https://logoto.betteruptime.com/)'].join('')), ephemeral: false, components: [] });
+      }
+      if ((interaction.commandName) == 'support') {
+        await interaction.reply({ content: (['🤝 Here is the link to the support server: [link](https://discord.gg/TPXFVYVnXe)','\n','🤝 Voici le lien vers le serveur de support :[lien](https://discord.gg/TPXFVYVnXe)'].join('')), ephemeral: false, components: [] });
+      }
+      if ((interaction.commandName) == 'logo-add' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        (interaction.guild).channels.create((['l-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
+          Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord.
+          `,'\n',`**It's almost over!**
+          All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL.`].join('')))});
+          await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
+        });} else if ((interaction.commandName) == 'logo-add' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
+      }
+      if ((interaction.commandName) == 'name-add' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        (interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
+          Il vous reste plus qu'à mettre le nom du serveur que vous voulez dans le sujet.`,'\n',`**Almost done!**
+          All you have to do now is put the name of the server you want in the subject line.`].join('')))});
+          await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
+        });} else if ((interaction.commandName) == 'name-add' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
+        await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
+      }
+    
+        });
+    
     s4d.client.on('ready', async () => {
       jour = ((new Date().getDate())) - 1;
       s4d.client.channels.cache.get('1413899996691955755').send({content:String('Démarrage du bot...')});
@@ -207,48 +252,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
               }
     
     });
-    
-    s4d.client.on('interactionCreate', async (interaction) => {
-              if ((interaction.commandName) == 'setup') {
-        (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
-            Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord
-            -# (elle doit commencer par https://cdn.discordapp.com/attachments).`,'\n',`**It's almost over!**
-            All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL
-            -# (it must begin with https://cdn.discordapp.com/attachments).`].join('')))});
-            await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
-          });(interaction.guild).channels.create('log-logoto', { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Salon des log à été créé**
-            Vous obtiendrez les actions fait par le bot dans se salon`,'\n',`**Log room has been created**
-            You will find the actions performed by the bot in this room.`].join('')))});
-          });});
-      }
-      if ((interaction.commandName) == 'help') {
-        await interaction.reply({ content: (['Aide de Logoto - Automatisez votre Logo !','\n','====================================','\n','**Je suis le bot spécialisé dans l\'automatisation du changement de logo de votre serveur, sans nécessiter de commandes complexes après la configuration.**','\n','###','\n','Les commandes','\n','* **`/setup`** : Crée un salon de démonstration pour comprendre le fonctionnement et démarrer rapidement la configuration.','\n','* **`/logo-add`** : Crée un salon de changement de logo avec les options day (Obligatoire, pour le jour), month (Obligatoire, pour le mois).','\n','* **`/name-add`** : Crée un salon de changement de nom avec les options day (Obligatoire, pour le jour), month (Obligatoire, pour le mois).','\n','* **`/help`** : Affiche ce message d\'aide.','\n','* **`/invite`** : Invitez le bot dans votre serveurs.','\n','* **`/support`** : Rejoigniez le serveur de support.','\n','Pour l\'aide complète :[Ici](https://logoto.onrender.com/help)','\n','For english help :[Here](https://logoto.onrender.com/help)'].join('')), ephemeral: false, components: [] });
-      }
-      if ((interaction.commandName) == 'invite') {
-        await interaction.reply({ content: (['Voici le lien d\'invitation du bot Discord :[lien](https://discord.com/oauth2/authorize?client_id=1431383390162124920)','\n','Here is the link to add the bot: [link](https://discord.com/oauth2/authorize?client_id=1431383390162124920)'].join('')), ephemeral: false, components: [] });
-      }
-      if ((interaction.commandName) == 'ping') {
-        await interaction.reply({ content: (['Pong !**','\n',s4d.client.ws.ping,'ms**.','\n','[Status page](https://logoto.betteruptime.com/)'].join('')), ephemeral: false, components: [] });
-      }
-      if ((interaction.commandName) == 'support') {
-        await interaction.reply({ content: (['Voici le lien vers le serveur de support :[lien](https://discord.gg/TPXFVYVnXe)','\n','Here is the link to the support server: [link](https://discord.gg/TPXFVYVnXe)'].join('')), ephemeral: false, components: [] });
-      }
-      if ((interaction.commandName) == 'logo-add') {
-        (interaction.guild).channels.create((['l-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
-          Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord
-          (elle doit commencer par https://cdn.discordapp.com/attachments).`,'\n',`**It's almost over!**
-          All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL
-          (it must begin with https://cdn.discordapp.com/attachments).`].join('')))});
-          await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
-        });}
-      if ((interaction.commandName) == 'name-add') {
-        (interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
-          Il vous reste plus qu'à mettre le nom du serveur que vous voulez dans le sujet.`,'\n',`**Almost done!**
-          All you have to do now is put the name of the server you want in the subject line.`].join('')))});
-          await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
-        });}
-    
-        });
     
     /* IMPORTED - S4D Website Hosting Dependencies */
     let S4D_APP_WEBSITE_HOSTING_PORT = 8080
@@ -936,6 +939,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     s4d.client.on('guildCreate', async (s4dguild) => {
       s4d.client.channels.cache.get('1432341468059537419').send({content:String((['Bot ajouté dans **',s4dguild.name,'** (',s4dguild.id,').'].join('')))});
+      (s4dguild.owner).send({content:String((['**Thank you** for adding **Logoto** to **',s4dguild.name,'** type `/help` for more information about the bot.','\n','\n','**Merci d\'avoir** ajouter **Logoto** dans **',s4dguild.name,'** faite `/help` pour avoir plus d\'informations sur le bot.'].join('')))});
     
     });
     
