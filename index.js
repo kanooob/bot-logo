@@ -17,6 +17,7 @@
     const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
     // block imports
+    let moment  = require("moment")
     const os = require("os-utils");
     let URL = require('url')
     const ms = require("ms")
@@ -663,6 +664,17 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 document.addEventListener('DOMContentLoaded', () => {
                     // C'est tout. La page est déjà en français.
                 });
+        </div> <footer>
+                <p>Ce site est hébergé sur Render. Logoto est un projet personnel.</p>
+                <div class="footer-links">
+                    <a href="/tos">Conditions d'Utilisation (ToS)</a>
+                    <a href="/privacy">Politique de Confidentialité</a>
+                    <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Code Source</a>
+                </div>
+            </footer>
+    
+            <script>
+            // ... votre script de traduction suit ici
             </script>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('help.html')))
@@ -716,20 +728,29 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </script>
     
             <style>
+                /* AJUSTEMENT DU BODY pour permettre au footer de descendre */
                 body {
                     font-family: Arial, sans-serif;
                     margin: 0;
                     padding: 0;
                     display: flex;
-                    justify-content: center;
-                    align-items: center;
+                    flex-direction: column; /* Permet à main et footer d'être empilés */
+                    justify-content: space-between; /* Pousse le footer vers le bas */
                     min-height: 100vh;
                     background-color: #36393f;
                     color: #ffffff;
                     text-align: center;
-                    padding: 20px;
                     box-sizing: border-box;
                 }
+    
+                .main-content {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-grow: 1;
+                    padding: 20px;
+                }
+    
                 .container { max-width: 600px; width: 100%; }
                 .icon {
                     width: 150px;
@@ -777,60 +798,444 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                         justify-content: center;
                     }
                 }
+    
+                /* NOUVEAUX STYLES FOOTER */
+                footer {
+                    background-color: #2f3136; /* Une couleur légèrement plus foncée que le fond du body */
+                    padding: 15px 20px;
+                    color: #99aab5;
+                    font-size: 0.9rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                }
+    
+                footer a {
+                    color: #ffffff; /* Texte de lien blanc pour le contraste */
+                    text-decoration: none;
+                    margin: 0 10px;
+                    transition: color 0.2s;
+                }
+    
+                footer a:hover {
+                    color: #7289da;
+                    text-decoration: underline;
+                }
+    
+                .footer-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                    margin-top: 5px;
+                }
             </style>
         </head>
         <body>
-            <main class="container">
-                <img src="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png"
-                     alt="Icône de Logoto, le bot Discord d'automatisation de logo et de nom"
-                     class="icon">
+            <div class="main-content">
+                <main class="container">
+                    <img src="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png"
+                         alt="Icône de Logoto, le bot Discord d'automatisation de logo et de nom"
+                         class="icon">
     
-                <h1>Logoto : Automatisez le Logo et le Nom de votre Serveur Discord</h1>
+                    <h1>Logoto : Automatisez le Logo et le Nom de votre Serveur Discord</h1>
     
-                <p class="description">
-                    Logoto est le <strong>bot Discord</strong> qu'il vous faut pour <strong>automatiser le changement de l'icône</strong> et du <strong>nom de votre serveur</strong>.
-                    Planifiez vos modifications pour des événements spéciaux, des saisons ou des célébrations, sans effort !
-                </p>
+                    <p class="description">
+                        Logoto est le <strong>bot Discord</strong> qu'il vous faut pour <strong>automatiser le changement de l'icône</strong> et du <strong>nom de votre serveur</strong>.
+                        Planifiez vos modifications pour des événements spéciaux, des saisons ou des célébrations, sans effort !
+                    </p>
     
-                <div class="button-container">
-                    <a href="https://discord.com/oauth2/authorize?client_id=1431383390162124920"
-                       class="btn btn-primary"
-                       target="_blank"
-                       rel="noopener noreferrer"> Ajouter à Discord
-                    </a>
+                    <div class="button-container">
+                        <a href="https://discord.com/oauth2/authorize?client_id=1431383390162124920"
+                           class="btn btn-primary"
+                           target="_blank"
+                           rel="noopener noreferrer"> Ajouter à Discord
+                        </a>
     
-                    <a href="/help" class="btn btn-secondary">
-                       Voir l'aide et les commandes
-                    </a>
+                        <a href="/help" class="btn btn-secondary">
+                           Voir l'aide et les commandes
+                        </a>
+                    </div>
+                </main>
+            </div>
+    
+            <footer>
+                <p>Ce site est hébergé sur Render. Logoto est un projet personnel.</p>
+                <div class="footer-links">
+                    <a href="/tos">Conditions d'Utilisation (ToS)</a>
+                    <a href="/privacy">Politique de Confidentialité</a>
+                    <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Code Source</a>
                 </div>
-            </main>
+            </footer>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
       })
-      S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
-          S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
-        Allow: /
-        Disallow: /blocks.xml
-        Disallow: /index.js
-        Disallow: /404
-        Sitemap: https://logoto.onrender.com/sitemap.xml`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
+    
+    
+    S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
+    /* IMPORTED - S4D Website Hosting Dependencies */
+    let S4D_APP_WEBSITE_HOSTING_PORT = 8080
+    
+    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_cors());
+    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_bodyParser.urlencoded({
+        extended: false
+    }));
+    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_bodyParser.json());
+    
+      S4D_WEBSITECREATION_EXPRESS_app.all('/privacy', async function(req, res) {
+          S4D_APP_write.sync(String('privacy.html'), String(`<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <title>Politique de Confidentialité (Privacy Policy) de Logoto Bot Discord</title>
+            <meta name="description" content="Politique de confidentialité du bot Discord Logoto. Détails sur les données collectées (Serveur ID, Nom de Salon) et leur utilisation pour le service d'automatisation.">
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 40px 20px;
+                    background-color: #36393f;
+                    color: #dcddde;
+                    line-height: 1.6;
+                }
+    
+                .container {
+                    max-width: 900px;
+                    margin: auto;
+                    background: #2f3136;
+                    padding: 30px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+                }
+    
+                h1 {
+                    color: #7289da;
+                    border-bottom: 2px solid #7289da;
+                    padding-bottom: 10px;
+                    font-size: 2.2rem;
+                }
+    
+                h2 {
+                    color: #5865f2;
+                    margin-top: 30px;
+                    border-bottom: 1px solid #4f545c;
+                    padding-bottom: 5px;
+                }
+    
+                p, li {
+                    font-size: 1.1rem;
+                    color: #dcddde;
+                }
+    
+                a {
+                    color: #7289da;
+                    text-decoration: underline;
+                }
+    
+                a:hover {
+                    color: #5865f2;
+                }
+    
+                ul {
+                    padding-left: 20px;
+                    list-style-type: disc;
+                }
+    
+                li {
+                    margin-bottom: 10px;
+                }
+    
+                .important-note {
+                    background-color: #3c3a2e;
+                    border-left: 5px solid #ffc107;
+                    padding: 15px;
+                    margin-top: 20px;
+                    border-radius: 4px;
+                    color: #ffffff;
+                }
+    
+                footer {
+                    background-color: #36393f;
+                    text-align: center;
+                    margin-top: 50px;
+                    padding: 20px 0;
+                    color: #99aab5;
+                    font-size: 0.9rem;
+                }
+    
+                footer a {
+                    color: #ffffff;
+                }
+            </style>
+        </head>
+        <body>
+    
+            <div class="container">
+                <header>
+                     <p><a href="/">← Retour à la page d'accueil</a></p>
+                </header>
+    
+                <main>
+                    <h1>Politique de Confidentialité (Privacy Policy) de Logoto</h1>
+                    <p>Dernière mise à jour : 21/11/2025</p>
+                    <hr>
+    
+                    <p>
+                        La présente Politique de Confidentialité décrit les types d'informations que le Bot Discord Logoto ("le Service") collecte, comment ces informations sont utilisées et les mesures prises pour assurer leur protection. Le service est fourni par Galaxie_s9, un développeur indépendant.
+                    </p>
+    
+                    <h2>1. Collecte et Utilisation des Informations</h2>
+                    <p>
+                        Logoto est un bot axé sur la fonctionnalité et la minimisation des données. Nous ne stockons que les informations strictement nécessaires pour fournir le service d'automatisation.
+                    </p>
+    
+                    <h3>Types de Données Collectées :</h3>
+                    <ul>
+                        <li>
+                            <strong>Identifiants de Serveur (Guild IDs) :</strong> L'identifiant unique de votre serveur Discord est collecté pour l'associer aux configurations de planification (salons, logs).
+                        </li>
+                        <li>
+                            <strong>Identifiants de Salons (Channel IDs) :</strong> Les identifiants des salons de planification (ex : <code>l-31-12</code>, <code>n-1-1</code>) et du salon de log (<code>log-logoto</code>) sont stockés pour que le bot puisse vérifier les changements et les exécuter.
+                        </li>
+                        <li>
+                            <strong>Contenu des Sujets de Salons (Channel Topics) :</strong> Le lien de l'image de logo ou le nouveau nom de serveur que vous placez dans le sujet de salon est stocké temporairement en mémoire lors de la vérification quotidienne, mais **n'est pas stocké de manière permanente dans une base de données** au-delà de sa présence sur Discord.
+                        </li>
+                        <li>
+                            <strong>Identifiants d'Utilisateur (User IDs) :</strong> Les identifiants des utilisateurs peuvent être vus par le Bot lors de l'exécution d'une commande (ex: <code>/setup</code>) pour vérifier les permissions. Ces identifiants **ne sont pas stockés de manière permanente**.
+                        </li>
+                    </ul>
+    
+                    <div class="important-note">
+                        <strong>Logoto ne stocke PAS :</strong> Les messages privés, les messages de discussion, les adresses IP, les noms d'utilisateur (au-delà de la vérification initiale des permissions), ni aucune donnée personnelle sensible.
+                    </div>
+    
+                    <h2>2. Finalité du Traitement des Données</h2>
+                    <p>
+                        Les informations collectées sont utilisées exclusivement pour les finalités suivantes :
+                    </p>
+                    <ul>
+                        <li>Fournir et opérer le service Logoto (changer le logo/nom du serveur à la date prévue).</li>
+                        <li>Maintenir les logs d'activité du Bot pour le dépannage et la vérification des erreurs (stockées dans le salon <code>log-logoto</code> sur votre serveur).</li>
+                        <li>Assurer la sécurité et la stabilité du Bot.</li>
+                    </ul>
+    
+                    <h2>3. Partage des Informations</h2>
+                    <p>
+                        Nous ne vendons, n'échangeons, ni ne louons vos informations d'identification de serveur à des tiers. Les seules entités ayant accès à ces identifiants sont :
+                    </p>
+                    <ul>
+                        <li>**Discord :** En utilisant le Bot, vous êtes soumis à la politique de Discord.</li>
+                        <li>**L'Hébergeur :** Les données de fonctionnement du Bot sont stockées temporairement sur les serveurs de l'hébergeur Render.</li>
+                    </ul>
+    
+                    <h2>4. Conservation des Données</h2>
+                    <p>
+                        Les identifiants de serveur et de salons sont conservés tant que le Bot Logoto est présent sur votre serveur Discord. Si vous retirez le Bot de votre serveur, toutes les informations de configuration associées à cet identifiant de serveur sont automatiquement effacées dans les [DÉLAI, ex: 24 heures] suivant le départ du Bot.
+                    </p>
+    
+                    <h2>5. Conformité au RGPD (Résidents de l'UE)</h2>
+                    <p>
+                        Si vous êtes résident de l'Espace Économique Européen (EEE), vous avez certains droits en vertu du Règlement Général sur la Protection des Données (RGPD) :
+                    </p>
+                    <ul>
+                        <li>Droit d'accès, de rectification et d'effacement de vos données personnelles (Server ID).</li>
+                        <li>Droit de retirer votre consentement (en retirant simplement le Bot de votre serveur).</li>
+                    </ul>
+                    <p>
+                        Pour exercer ces droits, veuillez nous contacter à l'adresse indiquée dans la section 7.
+                    </p>
+    
+                    <h2>6. Sécurité des Données</h2>
+                    <p>
+                        Nous mettons en œuvre des mesures de sécurité techniques et organisationnelles pour protéger les données que nous traitons. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est totalement sécurisée.
+                    </p>
+    
+                    <h2>7. Contact</h2>
+                    <p>
+                        Pour toute question ou demande concernant cette Politique de Confidentialité, veuillez nous contacter à l'adresse e-mail dédiée : aidan64laf@gmail.com.
+                    </p>
+    
+                </main>
+    
+            </div>
+    
+            <footer>
+                <p>Logoto est un projet personnel. | <a href="https://github.com/kanooob/Logoto" target="_blank">Voir le code source</a></p>
+            </footer>
+    
+        </body>
+        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('privacy.html')))
     
       })
-      S4D_WEBSITECREATION_EXPRESS_app.all('/sitemap.xml', async function(req, res) {
-          S4D_APP_write.sync(String('sitemap.xml'), String(`<?xml version="1.0" encoding="UTF-8"?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+      S4D_WEBSITECREATION_EXPRESS_app.all('/tos', async function(req, res) {
+          S4D_APP_write.sync(String('tos.html'), String(`<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-        <url>
-          <loc>https://logoto.onrender.com/</loc>
-          <priority>1.00</priority>
-        </url>
-        <url>
-          <loc>https://logoto.onrender.com/help</loc>
-          <priority>0.80</priority>
-        </url>
+            <title>Conditions d'Utilisation (ToS) de Logoto Bot Discord</title>
+            <meta name="description" content="Conditions d'utilisation légales du bot Discord Logoto. Lisez nos règles concernant la gestion du serveur, la propriété intellectuelle et la limitation de responsabilité.">
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
     
-        </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    margin: 0;
+                    padding: 40px 20px;
+                    background-color: #36393f;
+                    color: #dcddde;
+                    line-height: 1.6;
+                }
+    
+                .container {
+                    max-width: 900px;
+                    margin: auto;
+                    background: #2f3136;
+                    padding: 30px;
+                    border-radius: 8px;
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+                }
+    
+                h1 {
+                    color: #7289da;
+                    border-bottom: 2px solid #7289da;
+                    padding-bottom: 10px;
+                    font-size: 2.2rem;
+                }
+    
+                h2 {
+                    color: #5865f2;
+                    margin-top: 30px;
+                    border-bottom: 1px solid #4f545c;
+                    padding-bottom: 5px;
+                }
+    
+                p, li {
+                    font-size: 1.1rem;
+                    color: #dcddde;
+                }
+    
+                a {
+                    color: #7289da;
+                    text-decoration: underline;
+                }
+    
+                a:hover {
+                    color: #5865f2;
+                }
+    
+                ol {
+                    padding-left: 20px;
+                }
+    
+                li {
+                    margin-bottom: 10px;
+                }
+    
+                footer {
+                    background-color: #36393f;
+                    text-align: center;
+                    margin-top: 50px;
+                    padding: 20px 0;
+                    color: #99aab5;
+                    font-size: 0.9rem;
+                }
+    
+                footer a {
+                    color: #ffffff;
+                }
+            </style>
+        </head>
+        <body>
+    
+            <div class="container">
+                <header>
+                     <p><a href="/">← Retour à la page d'accueil</a></p>
+                </header>
+    
+                <main>
+                    <h1>Conditions d'Utilisation (Terms of Service - ToS) de Logoto</h1>
+                    <p>Dernière mise à jour : 21/11/2025</p>
+                    <hr>
+    
+                    <h2>1. Acceptation des Conditions</h2>
+                    <p>
+                        Bienvenue sur Logoto, un service fourni par un développeur indépendant, Galaxie_S9.
+                        En ajoutant et en utilisant le bot Logoto sur votre serveur Discord, vous acceptez d'être lié par les présentes Conditions d'Utilisation (les "ToS") et toutes les lois et réglementations applicables. Si vous n'acceptez pas ces conditions, veuillez ne pas utiliser le Bot.
+                    </p>
+    
+                    <h2>2. Description du Service</h2>
+                    <p>
+                        Logoto est un bot Discord conçu pour l'automatisation. Son rôle principal est de permettre aux administrateurs de serveurs de **changer automatiquement le logo et/ou le nom de leur serveur** Discord à des dates et heures planifiées, en configurant des salons spécifiques.
+                    </p>
+    
+                    <h2>3. Conditions d'Utilisation et Engagements de l'Utilisateur</h2>
+                    <p>
+                        L'utilisateur s'engage à respecter les règles suivantes lors de l'utilisation de Logoto :
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Conformité à Discord :</strong> L'utilisation de Logoto doit impérativement être conforme aux <a href="https://discord.com/terms" target="_blank">Conditions d'Utilisation de Discord</a> et aux <a href="https://discord.com/guidelines" target="_blank">Directives de la Communauté Discord</a>. Toute violation de ces règles via Logoto est interdite.
+                        </li>
+                        <li>
+                            <strong>Autorisations :</strong> L'utilisateur garantit qu'il dispose des autorisations nécessaires (Gestion du Serveur) pour installer et configurer Logoto.
+                        </li>
+                        <li>
+                            <strong>Contenu :</strong> Il est strictement interdit d'utiliser Logoto pour planifier ou afficher des logos ou des noms de serveur qui sont illégaux, offensants, haineux, violents, ou qui enfreignent les droits d'auteur.
+                        </li>
+                        <li>
+                            <strong>Abus du Service :</strong> Il est interdit d'utiliser le Bot de manière abusive ou excessive qui pourrait nuire au fonctionnement du service ou aux autres utilisateurs.
+                        </li>
+                    </ol>
+    
+                    <h2>4. Propriété Intellectuelle et Licence</h2>
+                    <ol>
+                        <li>
+                            <strong>Code Logoto :</strong> Le code source de Logoto est la propriété de Galaxie_S9 et est distribué sous la licence MIT License sur <a href="https://github.com/kanooob/Logoto?tab=MIT-1-ov-file#" target="_blank">GitHub</a>.
+                        </li>
+                        <li>
+                            <strong>Contenu Utilisateur :</strong> Les logos et noms de serveur que l'utilisateur planifie via le Bot demeurent la propriété du serveur Discord ou de l'utilisateur. Logoto ne revendique aucun droit sur ce contenu.
+                        </li>
+                    </ol>
+    
+                    <h2>5. Limitation de Responsabilité et Avertissement</h2>
+                    <p>
+                        <strong>Logoto est fourni « tel quel » sans garantie.</strong> En tant que développeur indépendant, nous ne pouvons garantir que le service sera ininterrompu, exempt d'erreurs ou toujours disponible.
+                    </p>
+                    <p>
+                        Nous ne sommes pas responsables des dommages causés directement ou indirectement par l'utilisation du Bot, y compris, mais sans s'y limiter, les erreurs de planification de logo ou de nom. L'utilisateur utilise le Bot à ses propres risques et doit toujours s'assurer qu'il dispose de sauvegardes ou de contrôles en place.
+                    </p>
+    
+                    <h2>6. Modifications et Résiliation</h2>
+                    <ol>
+                        <li>
+                            <strong>Modifications :</strong> Nous nous réservons le droit de modifier ces Conditions à tout moment. La date de la dernière mise à jour sera indiquée en haut de cette page. L'utilisation continue du Bot après une modification vaut acceptation des nouvelles Conditions.
+                        </li>
+                        <li>
+                            <strong>Résiliation :</strong> Nous pouvons suspendre ou mettre fin à l'accès de Logoto à n'importe quel serveur, sans préavis, en cas de violation des présentes Conditions.
+                        </li>
+                    </ol>
+    
+                    <h2>7. Contact</h2>
+                    <p>
+                        Pour toute question ou préoccupation concernant ces Conditions d'Utilisation ou l'utilisation du Bot Logoto, veuillez nous contacter à l'adresse suivante : aidan64laf@gmail.com.
+                    </p>
+    
+                </main>
+    
+            </div>
+    
+            <footer>
+                <p>Logoto est un projet personnel. | <a href="https://github.com/kanooob/Logoto" target="_blank">Voir le code source</a></p>
+            </footer>
+    
+        </body>
+        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('tos.html')))
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.all('404', async function(req, res) {
@@ -955,6 +1360,31 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </div>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('404.html')))
+    
+      })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
+          S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
+        Allow: /
+        Disallow: /blocks.xml
+        Disallow: /index.js
+        Disallow: /404
+        Sitemap: https://logoto.onrender.com/sitemap.xml`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
+    
+      })
+      S4D_WEBSITECREATION_EXPRESS_app.all('/sitemap.xml', async function(req, res) {
+          S4D_APP_write.sync(String('sitemap.xml'), String(`<?xml version="1.0" encoding="UTF-8"?>
+        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    
+        <url>
+          <loc>https://logoto.onrender.com/</loc>
+          <priority>1.00</priority>
+        </url>
+        <url>
+          <loc>https://logoto.onrender.com/help</loc>
+          <priority>0.80</priority>
+        </url>
+    
+        </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
     
       })
       S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
