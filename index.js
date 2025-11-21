@@ -273,7 +273,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_bodyParser.json());
     
       S4D_WEBSITECREATION_EXPRESS_app.all('/help', async function(req, res) {
-          S4D_APP_write.sync(String('help.html'), String(`<!DOCTYPE html>
+          S4D_APP_write.sync(String('help.html'), String(`<!DOCTYPE TML>
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
@@ -323,11 +323,20 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 body {
                     font-family: Arial, sans-serif;
                     margin: 0;
-                    padding: 40px 20px;
+                    padding: 0; /* padding: 40px 20px; déplacé vers .content-wrapper */
                     background-color: #36393f;
                     color: #dcddde;
                     line-height: 1.6;
+                    display: flex;
+                    flex-direction: column;
+                    min-height: 100vh;
                 }
+    
+                .content-wrapper {
+                    flex-grow: 1;
+                    padding: 40px 20px;
+                }
+    
                 .container {
                     max-width: 900px;
                     margin: auto;
@@ -376,7 +385,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 5px;
                 }
     
-                /* STYLES DES LIENS & BOUTONS (RÉSOLUTION FINALE) */
+                /* STYLES DES LIENS & BOUTONS */
                 .container a {
                     text-decoration: underline;
                     color: #7289da;
@@ -407,20 +416,37 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 .btn-secondary { background-color: #4f545c; }
                 .btn-secondary:hover { background-color: #5d6269; }
     
-                /* Styles du Footer (Accessibilité Lien OK) */
+                /* STYLES DU FOOTER (Ajoutés/Corrigés) */
                 footer {
-                    background-color: #36393f;
-                    text-align: center;
-                    margin-top: 50px;
-                    padding: 20px 0;
+                    background-color: #2f3136; /* Couleur du conteneur pour le contraste */
+                    padding: 15px 20px;
                     color: #99aab5;
                     font-size: 0.9rem;
+                    width: 100%;
+                    box-sizing: border-box;
+                    text-align: center;
                 }
+    
                 footer a {
-                    color: #ffffff;
+                    color: #ffffff; /* Texte de lien blanc pour le contraste */
+                    text-decoration: none;
+                    margin: 0 10px;
+                    transition: color 0.2s;
+                }
+    
+                footer a:hover {
+                    color: #7289da;
                     text-decoration: underline;
                 }
-                footer a:hover { color: #7289da; }
+    
+                .footer-links {
+                    display: flex;
+                    justify-content: center;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                    margin-top: 5px;
+                }
+    
                 hr {
                     border: 0;
                     border-top: 1px solid #4f545c;
@@ -436,111 +462,113 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </head>
         <body>
     
-            <div class="container">
+            <div class="content-wrapper">
+                <div class="container">
     
-                <header>
-                    <div class="lang-switch">
-                        <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
-                        <button onclick="changeLanguage('fr')" class="btn btn-primary">Afficher en Français</button>
-                        <button onclick="changeLanguage('en')" class="btn btn-primary">Display in English</button>
-                    </div>
-                </header>
+                    <header>
+                        <div class="lang-switch">
+                            <a href="/" class="btn btn-secondary">Retour à l'accueil</a>
+                            <button id="btn-fr" onclick="changeLanguage('fr')" class="btn btn-primary">Afficher en Français</button>
+                            <button id="btn-en" onclick="changeLanguage('en')" class="btn btn-primary">Display in English</button>
+                        </div>
+                    </header>
     
-                <main id="content-area">
-                    <h1>Aide et Commandes Logoto : Automatisez Logo & Nom 🇫🇷</h1>
-                    <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
+                    <main id="content-area">
+                        <h1>Aide et Commandes Logoto : Automatisez Logo & Nom 🇫🇷</h1>
+                        <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
     
-                    <h2>Les Commandes Logoto</h2>
-                    <ul class="command-list">
-                        <li><code>/setup</code> : Crée les salons nécessaires (Logoto, log-logoto) pour un démarrage rapide.</li>
-                        <li><code>/logo-add</code> : Crée un salon de changement de logo avec les options <code>day</code> (jour) et <code>month</code> (mois).</li>
-                        <li><code>/name-add</code> : Crée un salon de changement de nom du serveur avec les options <code>day</code> et <code>month</code>.</li>
-                        <li><code>/help</code> : Affiche ce message d'aide (ou cette page !).</li>
-                        <li><code>/invite</code> : Obtenez le lien pour inviter le bot sur votre serveur.</li>
-                        <li><code>/support</code> : Rejoignez le serveur de support pour toute question ou aide.</li>
-                    </ul>
+                        <h2>Les Commandes Logoto</h2>
+                        <ul class="command-list">
+                            <li><code>/setup</code> : Crée les salons nécessaires (Logoto, log-logoto) pour un démarrage rapide.</li>
+                            <li><code>/logo-add</code> : Crée un salon de changement de logo avec les options <code>day</code> (jour) et <code>month</code> (mois).</li>
+                            <li><code>/name-add</code> : Crée un salon de changement de nom du serveur avec les options <code>day</code> et <code>month</code>.</li>
+                            <li><code>/help</code> : Affiche ce message d'aide (ou cette page !).</li>
+                            <li><code>/invite</code> : Obtenez le lien pour inviter le bot sur votre serveur.</li>
+                            <li><code>/support</code> : Rejoignez le serveur de support pour toute question ou aide.</li>
+                        </ul>
     
-                    <hr>
+                        <hr>
     
-                    <h2>Système de Changement de Logo Automatique</h2>
-                    <p>Le bot surveille des salons spécifiques pour planifier et exécuter les changements de logo. Voici comment le configurer manuellement (ou avec <code>/logo-add</code>) :</p>
+                        <h2>Système de Changement de Logo Automatique</h2>
+                        <p>Le bot surveille des salons spécifiques pour planifier et exécuter les changements de logo. Voici comment le configurer manuellement (ou avec <code>/logo-add</code>) :</p>
     
-                    <ol>
-                        <li>
-                            <strong>Créez le Salon de Planification (Logo) :</strong>
-                            <ul>
-                                <li>Le nom du salon doit être au format : <code>l-[JOUR]-[MOIS]</code></li>
-                                <li>EXEMPLE : Pour un logo le 31 décembre : <code>l-31-12</code></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Préparez le Logo :</strong>
-                            <ul>
-                                <li>Envoyez votre image de logo sur n'importe quel salon Discord et copiez son lien direct.</li>
-                                <li>Le lien doit être une URL d'image valide.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Planifiez le Changement :</strong>
-                            <ul>
-                                <li>Modifiez le **Sujet du Salon** (Channel Topic) créé à l'étape 1.</li>
-                                <li>Collez le **lien** de votre image dans le sujet du salon.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Résultat :</strong>
-                            <ul>
-                                <li>Le bot changera automatiquement le logo du serveur au jour et au mois spécifiés !</li>
-                            </ul>
-                        </li>
-                    </ol>
+                        <ol>
+                            <li>
+                                <strong>Créez le Salon de Planification (Logo) :</strong>
+                                <ul>
+                                    <li>Le nom du salon doit être au format : <code>l-[JOUR]-[MOIS]</code></li>
+                                    <li>EXEMPLE : Pour un logo le 31 décembre : <code>l-31-12</code></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Préparez le Logo :</strong>
+                                <ul>
+                                    <li>Envoyez votre image de logo sur n'importe quel salon Discord et copiez son lien direct.</li>
+                                    <li>Le lien doit être une URL d'image valide.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Planifiez le Changement :</strong>
+                                <ul>
+                                    <li>Modifiez le **Sujet du Salon** (Channel Topic) créé à l'étape 1.</li>
+                                    <li>Collez le **lien** de votre image dans le sujet du salon.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Résultat :</strong>
+                                <ul>
+                                    <li>Le bot changera automatiquement le logo du serveur au jour et au mois spécifiés !</li>
+                                </ul>
+                            </li>
+                        </ol>
     
-                    <hr>
+                        <hr>
     
-                    <h2>Système de Changement de Nom Automatique</h2>
-                    <p>Le principe est le même pour le nom du serveur (configurable avec <code>/name-add</code>) :</p>
+                        <h2>Système de Changement de Nom Automatique</h2>
+                        <p>Le principe est le même pour le nom du serveur (configurable avec <code>/name-add</code>) :</p>
     
-                    <ol>
-                        <li>
-                            <strong>Créez le Salon de Planification (Nom) :</strong>
-                            <ul>
-                                <li>Le nom du salon doit être au format : <code>n-[JOUR]-[MOIS]</code></li>
-                                <li>EXEMPLE : Pour un nom le 1er janvier : <code>n-1-1</code></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Planifiez le Changement :</strong>
-                            <ul>
-                                <li>Modifiez le **Sujet du Salon** (Channel Topic) créé à l'étape 1.</li>
-                                <li>Écrivez le **nouveau nom du serveur** dans le sujet du salon.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Résultat :</strong>
-                            <ul>
-                                <li>Le bot changera automatiquement le nom du serveur à la date spécifiée !</li>
-                            </ul>
-                        </li>
-                    </ol>
+                        <ol>
+                            <li>
+                                <strong>Créez le Salon de Planification (Nom) :</strong>
+                                <ul>
+                                    <li>Le nom du salon doit être au format : <code>n-[JOUR]-[MOIS]</code></li>
+                                    <li>EXEMPLE : Pour un nom le 1er janvier : <code>n-1-1</code></li>
+                                    </ul>
+                            </li>
+                            <li>
+                                <strong>Planifiez le Changement :</strong>
+                                <ul>
+                                    <li>Modifiez le **Sujet du Salon** (Channel Topic) créé à l'étape 1.</li>
+                                    <li>Écrivez le **nouveau nom du serveur** dans le sujet du salon.</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>Résultat :</strong>
+                                <ul>
+                                    <li>Le bot changera automatiquement le nom du serveur à la date spécifiée !</li>
+                                </ul>
+                            </li>
+                        </ol>
     
-                    <div class="note">
-                        <strong>NOTE IMPORTANTE :</strong> Pour que le changement automatique fonctionne chaque jour, le salon <code>log-logoto</code> <strong>doit exister</strong>.
-                        <br>Chaque jour, le bot envoie un message technique (<code>🔄 (l/n)-Loading</code>) dans ce salon pour déclencher la vérification. C'est ce message qui active ensuite le changement de logo ou de nom si la date correspond.
-                        <br>La commande <code>/setup</code> crée automatiquement ce salon pour vous.
-                    </div>
-                </main>
+                        <div class="note">
+                            <strong>NOTE IMPORTANTE :</strong> Pour que le changement automatique fonctionne chaque jour, le salon <code>log-logoto</code> <strong>doit exister</strong>.
+                            <br>Chaque jour, le bot envoie un message technique (<code>🔄 (l/n)-Loading</code>) dans ce salon pour déclencher la vérification. C'est ce message qui active ensuite le changement de logo ou de nom si la date correspond.
+                            <br>La commande <code>/setup</code> crée automatiquement ce salon pour vous.
+                        </div>
+                    </main>
     
-            </div>
-    
-            <footer>
-                <p>Ce site est hébergé sur Render. | <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Voir le code source</a></p>
+                </div>
+            </div> <footer>
+                <p>Ce site est hébergé sur Render. Logoto est un projet personnel.</p>
+                <div class="footer-links">
+                    <a href="/tos">Conditions d'Utilisation (ToS)</a>
+                    <a href="/privacy">Politique de Confidentialité</a>
+                    <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Code Source</a>
+                </div>
             </footer>
     
             <script>
-                // Le contenu FR est déjà dans le HTML.
-                // On ne le redéfinit pas ici pour éviter de charger deux fois le contenu.
-    
-                // --- Contenu Anglais (Seul le contenu EN reste dans le JS) ---
+                // --- Contenu Anglais ---
                 const contentEN = \`
                     <h1>Logoto Help - Automate your Logo & Name! 🇬🇧</h1>
                     <p>I am the bot specialized in automating the change of your server's logo AND name, without requiring complex commands after the initial setup.</p>
@@ -625,65 +653,43 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     </div>
                 \`;
     
-                /**
-                 * Fonction pour changer le contenu de la page
-                 * @param {string} lang - La langue à afficher ('fr' ou 'en')
-                 */
+                // --- Contenu Français (Récupéré du HTML initial) ---
+                const contentFR = document.getElementById('content-area').innerHTML;
+    
+                // --- Fonction de Changement de Langue CORRIGÉE ---
                 function changeLanguage(lang) {
                     const contentArea = document.getElementById('content-area');
+                    const btnFr = document.getElementById('btn-fr');
+                    const btnEn = document.getElementById('btn-en');
+    
                     if (lang === 'fr') {
-                        // Si on clique sur FR, on recharge le contenu FR.
-                        // Note : On ne peut pas juste "cacher" l'anglais car le FR n'est plus dans une variable.
-                        // Pour une optimisation future, on pourrait aussi charger le FR dans une variable au lieu de le re-copier ici.
-    
-                        // Pour l'instant, le plus simple est de le laisser se re-générer.
-                        // Rechargeons la page pour revenir au FR (plus simple que de re-copier tout le HTML ici)
-    
-                        // *** AMÉLIORATION DE LA LOGIQUE JS ***
-                        // Nous devons re-créer la variable 'contentFR' pour que le switch fonctionne
-    
-                        // Solution A : Recharger la page (simple, mais rechargement)
-                        // if (document.documentElement.lang !== 'fr') {
-                        //     window.location.reload();
-                        // }
-    
-                        // Solution B : Mettre le contenu FR dans une variable (meilleure expérience)
-                        // Je vais utiliser la Solution B
-    
-                        // -> Je vais remonter en haut du script et re-créer la variable contentFR.
-    
-                        // (Voir le script final ci-dessous)
-    
-                        contentArea.innerHTML = contentFR; // 'contentFR' sera redéfini ci-dessous
+                        contentArea.innerHTML = contentFR;
                         document.documentElement.lang = 'fr';
+                        // Mise à jour des boutons dans la langue cible (français)
+                        btnFr.textContent = "Afficher en Français";
+                        btnEn.textContent = "Display in English";
     
                     } else if (lang === 'en') {
                         contentArea.innerHTML = contentEN;
                         document.documentElement.lang = 'en';
+                        // Mise à jour des boutons dans la langue cible (anglais)
+                        btnFr.textContent = "Show in French"; // Texte EN pour le bouton FR
+                        btnEn.textContent = "Display in English";
                     }
                     window.scrollTo(0, 0);
                 }
     
-                // *** CORRECTION DE LA LOGIQUE JS ***
-                // Pour que le switch FR/EN fonctionne toujours, 'contentFR' doit exister.
-                const contentFR = document.getElementById('content-area').innerHTML;
-    
-                // Le contenu FR est déjà chargé (grâce au HTML statique).
-                // On n'exécute PAS changeLanguage('fr') au démarrage.
+                // --- Initialisation au chargement ---
                 document.addEventListener('DOMContentLoaded', () => {
-                    // C'est tout. La page est déjà en français.
+                     // Assurez-vous que les boutons ont les IDs pour le JS
+                     const btnFr = document.getElementById('btn-fr');
+                     const btnEn = document.getElementById('btn-en');
+                     if (document.documentElement.lang === 'fr') {
+                         // Si la page est en FR (par défaut), mettre le bouton EN en anglais
+                         btnEn.textContent = "Display in English";
+                         btnFr.textContent = "Afficher en Français"; // Par sécurité
+                     }
                 });
-        </div> <footer>
-                <p>Ce site est hébergé sur Render. Logoto est un projet personnel.</p>
-                <div class="footer-links">
-                    <a href="/tos">Conditions d'Utilisation (ToS)</a>
-                    <a href="/privacy">Politique de Confidentialité</a>
-                    <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Code Source</a>
-                </div>
-            </footer>
-    
-            <script>
-            // ... votre script de traduction suit ici
             </script>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('help.html')))
