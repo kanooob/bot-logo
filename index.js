@@ -267,14 +267,49 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
+    
+            <title>Aide et Commandes Logoto | Configurer le Bot Discord (Logo & Nom)</title>
+    
+            <meta name="description" content="Tutoriel complet et liste des commandes (/setup, /logo-add, /name-add) pour configurer Logoto. Apprenez à automatiser le logo et le nom de votre serveur Discord.">
+    
+            <link rel="canonical" href="https://logoto.onrender.com/help" />
+    
+            <meta name="keywords" content="aide logoto, commandes logoto, configurer logoto, setup bot discord, /logo-add, /name-add, tutoriel logoto, comment automatiser discord">
+    
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Aide de Logoto - Automatisez votre Logo & Nom</title>
-            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
+    
+            <meta property="og:title" content="Aide & Commandes | Logoto Bot Discord">
+            <meta property="og:description" content="Le tutoriel complet pour configurer l'automatisation de votre serveur Discord.">
+            <meta property="og:image" content="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+            <meta property="og:url" content="https://logoto.onrender.com/help"> <meta property="og:type" content="article"> <meta property="og:locale" content="fr_FR">
+    
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:title" content="Aide & Commandes | Logoto Bot Discord">
+            <meta name="twitter:description" content="Le tutoriel complet pour configurer l'automatisation de votre serveur.">
+            <meta name="twitter:image" content="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "TechArticle",
+              "headline": "Guide de Configuration et Commandes du Bot Logoto",
+              "description": "Apprenez à configurer et utiliser toutes les commandes de Logoto pour automatiser le changement de logo et de nom de votre serveur Discord.",
+              "image": "https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png",
+              "author": {
+                "@type": "Organization",
+                "name": "Logoto"
+              },
+              "publisher": {
+                "@type": "Organization",
+                "name": "Logoto"
+              }
+            }
+            </script>
     
             <style>
-                /* ---------------------------------------------------- */
                 /* STYLES DE BASE & CONTRASTE (Accessibilité OK) */
-                /* ---------------------------------------------------- */
                 body {
                     font-family: Arial, sans-serif;
                     margin: 0;
@@ -283,7 +318,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     color: #dcddde;
                     line-height: 1.6;
                 }
-    
                 .container {
                     max-width: 900px;
                     margin: auto;
@@ -292,26 +326,19 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 8px;
                     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
                 }
-    
                 h1 {
                     color: #7289da;
                     border-bottom: 2px solid #7289da;
                     padding-bottom: 10px;
                     font-size: 2.2rem;
                 }
-    
                 h2 {
                     color: #5865f2;
                     margin-top: 30px;
                     border-bottom: 1px solid #4f545c;
                     padding-bottom: 5px;
                 }
-    
-                p, li {
-                    font-size: 1.1rem;
-                    color: #dcddde;
-                }
-    
+                p, li { font-size: 1.1rem; color: #dcddde; }
                 code {
                     background-color: #484c52;
                     padding: 3px 6px;
@@ -319,7 +346,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     font-family: Consolas, 'Courier New', monospace;
                     color: #f2f2f2;
                 }
-    
                 .note {
                     background-color: #3c3a2e;
                     border-left: 5px solid #ffc107;
@@ -328,10 +354,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 4px;
                     color: #ffffff;
                 }
-                .note strong {
-                    color: #ffc107;
-                }
-    
+                .note strong { color: #ffc107; }
                 .command-list {
                     list-style-type: none;
                     padding: 0;
@@ -343,20 +366,11 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     border-radius: 5px;
                 }
     
-                /* ---------------------------------------------------- */
                 /* STYLES DES LIENS & BOUTONS (RÉSOLUTION FINALE) */
-                /* ---------------------------------------------------- */
-    
-                /* 💡 CORRECTION DU PROBLÈME DES BOUTONS : */
-                /* On ne met PAS de couleur générale sur 'a', car les .btn sont des 'a' et doivent être blancs. */
-                /* On cible uniquement les liens qui sont DANS le conteneur principal ou le footer. */
-    
-                /* Styles des liens DANS le contenu (main) */
                 .container a {
                     text-decoration: underline;
-                    color: #7289da; /* Garde la couleur Discord pour les liens normaux */
+                    color: #7289da;
                 }
-    
                 .lang-switch {
                     text-align: center;
                     margin-bottom: 30px;
@@ -365,7 +379,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     gap: 15px;
                     flex-wrap: wrap;
                 }
-    
                 .btn {
                     display: inline-block;
                     padding: 12px 25px;
@@ -373,29 +386,16 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     text-decoration: none !important;
                     font-size: 1rem;
                     font-weight: bold;
-                    /* 💡 IMPORTANT : C'est cette règle qui assure que le texte est BLANC sur TOUS les boutons */
                     color: #ffffff;
                     transition: transform 0.2s, background-color 0.2s;
                     border: none;
                     cursor: pointer;
                 }
-                .btn:hover {
-                    transform: translateY(-2px);
-                }
-    
-                .btn-primary {
-                    background-color: #5865f2;
-                }
-                .btn-primary:hover {
-                    background-color: #4f5bda;
-                }
-    
-                .btn-secondary {
-                    background-color: #4f545c;
-                }
-                .btn-secondary:hover {
-                    background-color: #5d6269;
-                }
+                .btn:hover { transform: translateY(-2px); }
+                .btn-primary { background-color: #5865f2; }
+                .btn-primary:hover { background-color: #4f5bda; }
+                .btn-secondary { background-color: #4f545c; }
+                .btn-secondary:hover { background-color: #5d6269; }
     
                 /* Styles du Footer (Accessibilité Lien OK) */
                 footer {
@@ -406,34 +406,22 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     color: #99aab5;
                     font-size: 0.9rem;
                 }
-    
-                /* Styles des liens DANS le footer */
                 footer a {
-                    color: #ffffff; /* Très contrasté sur le fond #36393f (Accessibilité OK) */
+                    color: #ffffff;
                     text-decoration: underline;
                 }
-    
-                footer a:hover {
-                    color: #7289da;
-                }
-    
+                footer a:hover { color: #7289da; }
                 hr {
                     border: 0;
                     border-top: 1px solid #4f545c;
                     margin: 40px 0;
                 }
-    
-                ol {
-                    padding-left: 20px;
-                }
-                ol li {
-                    margin-bottom: 15px;
-                }
+                ol { padding-left: 20px; }
+                ol li { margin-bottom: 15px; }
                 ol ul {
                     list-style-type: disc;
                     padding-left: 20px;
                 }
-    
             </style>
         </head>
         <body>
@@ -449,21 +437,10 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                 </header>
     
                 <main id="content-area">
-                </main>
-    
-            </div>
-    
-            <footer>
-                <p>Ce site est hébergé sur Render. | <a href="https://github.com/kanooob/Logoto" target="_blank">Voir le code source</a></p>
-            </footer>
-    
-            <script>
-                // (Votre contenu et vos fonctions de traduction inchangées et fonctionnelles)
-                const contentFR = \`
-                    <h1>Aide de Logoto - Automatisez votre Logo & Nom ! 🇫🇷</h1>
+                    <h1>Aide et Commandes Logoto : Automatisez Logo & Nom 🇫🇷</h1>
                     <p>Je suis le bot spécialisé dans l'automatisation du changement de logo ET du nom de votre serveur, sans nécessiter de commandes complexes après la configuration.</p>
     
-                    <h2>Les Commandes</h2>
+                    <h2>Les Commandes Logoto</h2>
                     <ul class="command-list">
                         <li><code>/setup</code> : Crée les salons nécessaires (Logoto, log-logoto) pour un démarrage rapide.</li>
                         <li><code>/logo-add</code> : Crée un salon de changement de logo avec les options <code>day</code> (jour) et <code>month</code> (mois).</li>
@@ -541,8 +518,19 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                         <br>Chaque jour, le bot envoie un message technique (<code>🔄 (l/n)-Loading</code>) dans ce salon pour déclencher la vérification. C'est ce message qui active ensuite le changement de logo ou de nom si la date correspond.
                         <br>La commande <code>/setup</code> crée automatiquement ce salon pour vous.
                     </div>
-                \`;
+                </main>
     
+            </div>
+    
+            <footer>
+                <p>Ce site est hébergé sur Render. | <a href="https://github.com/kanooob/Logoto" target="_blank" rel="noopener noreferrer">Voir le code source</a></p>
+            </footer>
+    
+            <script>
+                // Le contenu FR est déjà dans le HTML.
+                // On ne le redéfinit pas ici pour éviter de charger deux fois le contenu.
+    
+                // --- Contenu Anglais (Seul le contenu EN reste dans le JS) ---
                 const contentEN = \`
                     <h1>Logoto Help - Automate your Logo & Name! 🇬🇧</h1>
                     <p>I am the bot specialized in automating the change of your server's logo AND name, without requiring complex commands after the initial setup.</p>
@@ -627,11 +615,38 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     </div>
                 \`;
     
+                /**
+                 * Fonction pour changer le contenu de la page
+                 * @param {string} lang - La langue à afficher ('fr' ou 'en')
+                 */
                 function changeLanguage(lang) {
                     const contentArea = document.getElementById('content-area');
                     if (lang === 'fr') {
-                        contentArea.innerHTML = contentFR;
+                        // Si on clique sur FR, on recharge le contenu FR.
+                        // Note : On ne peut pas juste "cacher" l'anglais car le FR n'est plus dans une variable.
+                        // Pour une optimisation future, on pourrait aussi charger le FR dans une variable au lieu de le re-copier ici.
+    
+                        // Pour l'instant, le plus simple est de le laisser se re-générer.
+                        // Rechargeons la page pour revenir au FR (plus simple que de re-copier tout le HTML ici)
+    
+                        // *** AMÉLIORATION DE LA LOGIQUE JS ***
+                        // Nous devons re-créer la variable 'contentFR' pour que le switch fonctionne
+    
+                        // Solution A : Recharger la page (simple, mais rechargement)
+                        // if (document.documentElement.lang !== 'fr') {
+                        //     window.location.reload();
+                        // }
+    
+                        // Solution B : Mettre le contenu FR dans une variable (meilleure expérience)
+                        // Je vais utiliser la Solution B
+    
+                        // -> Je vais remonter en haut du script et re-créer la variable contentFR.
+    
+                        // (Voir le script final ci-dessous)
+    
+                        contentArea.innerHTML = contentFR; // 'contentFR' sera redéfini ci-dessous
                         document.documentElement.lang = 'fr';
+    
                     } else if (lang === 'en') {
                         contentArea.innerHTML = contentEN;
                         document.documentElement.lang = 'en';
@@ -639,8 +654,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     window.scrollTo(0, 0);
                 }
     
+                // *** CORRECTION DE LA LOGIQUE JS ***
+                // Pour que le switch FR/EN fonctionne toujours, 'contentFR' doit exister.
+                const contentFR = document.getElementById('content-area').innerHTML;
+    
+                // Le contenu FR est déjà chargé (grâce au HTML statique).
+                // On n'exécute PAS changeLanguage('fr') au démarrage.
                 document.addEventListener('DOMContentLoaded', () => {
-                    changeLanguage('fr');
+                    // C'est tout. La page est déjà en français.
                 });
             </script>
         </body>
@@ -652,10 +673,48 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <title>Logoto : Bot Discord pour Changer Logo et Nom Automatiquement</title>
+    
+            <meta name="description" content="Découvrez Logoto, le bot Discord n°1 pour automatiser et planifier le changement du logo et du nom de votre serveur. Parfait pour les événements et les saisons !">
+    
+            <link rel="canonical" href="https://logoto.onrender.com/" />
+    
             <meta name="google-site-verification" content="u2mt1kkF8HLYxuULsxpdU7e8dJKFjj0ItJ6IPLcs23s" />
-            <title>Logoto - Votre Bot d'Automatisation Discord</title>
-            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
+    
+            <meta name="keywords" content="bot discord, logoto, changer logo discord, changer nom discord, automatiser, planification, bot événementiel discord, auto logo, auto name">
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <meta property="og:title" content="Logoto : Bot d'Automatisation Discord">
+            <meta property="og:description" content="Planifiez le changement de logo et de nom de votre serveur Discord pour vos événements.">
+            <meta property="og:image" content="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+            <meta property="og:url" content="https://logoto.onrender.com/"> <meta property="og:type" content="website">
+            <meta property="og:locale" content="fr_FR">
+    
+            <meta name="twitter:card" content="summary_large_image">
+            <meta name="twitter:title" content="Logoto : Bot d'Automatisation Discord">
+            <meta name="twitter:description" content="Automatisez le changement de logo et de nom de votre serveur pour les événements.">
+            <meta name="twitter:image" content="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
+    
+            <script type="application/ld+json">
+            {
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "Logoto",
+              "description": "Bot Discord pour automatiser et planifier le changement du logo et du nom d'un serveur.",
+              "applicationCategory": "Utilities",
+              "operatingSystem": "Discord",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "EUR"
+              }
+            }
+            </script>
+    
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -665,46 +724,37 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     justify-content: center;
                     align-items: center;
                     min-height: 100vh;
-                    background-color: #36393f; /* Fond sombre Discord */
+                    background-color: #36393f;
                     color: #ffffff;
                     text-align: center;
                     padding: 20px;
                     box-sizing: border-box;
                 }
-    
-                .container {
-                    max-width: 600px;
-                    width: 100%;
-                }
-    
+                .container { max-width: 600px; width: 100%; }
                 .icon {
                     width: 150px;
                     height: 150px;
-                    border-radius: 50%; /* Icône ronde */
+                    border-radius: 50%;
                     margin-bottom: 20px;
                     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
                 }
-    
                 h1 {
                     font-size: 2.5rem;
-                    color: #7289da; /* Bleu Discord */
+                    color: #7289da;
                     margin-bottom: 10px;
                 }
-    
                 p.description {
                     font-size: 1.2rem;
                     line-height: 1.6;
                     margin-bottom: 30px;
-                    color: #dcddde; /* Texte gris clair Discord */
+                    color: #dcddde;
                 }
-    
                 .button-container {
                     display: flex;
                     flex-direction: column;
                     gap: 15px;
                     margin-top: 20px;
                 }
-    
                 .btn {
                     display: inline-block;
                     padding: 15px 30px;
@@ -715,26 +765,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
                     color: #ffffff;
                     transition: transform 0.2s, background-color 0.2s;
                 }
+                .btn:hover { transform: translateY(-2px); }
+                .btn-primary { background-color: #5865f2; }
+                .btn-primary:hover { background-color: #4f5bda; }
+                .btn-secondary { background-color: #4f545c; }
+                .btn-secondary:hover { background-color: #5d6269; }
     
-                .btn:hover {
-                    transform: translateY(-2px);
-                }
-    
-                .btn-primary {
-                    background-color: #5865f2; /* Nouveau bleu Discord */
-                }
-                .btn-primary:hover {
-                    background-color: #4f5bda;
-                }
-    
-                .btn-secondary {
-                    background-color: #4f545c; /* Gris bouton Discord */
-                }
-                .btn-secondary:hover {
-                    background-color: #5d6269;
-                }
-    
-                /* Pour les écrans plus larges, mettre les boutons côte à côte */
                 @media (min-width: 600px) {
                     .button-container {
                         flex-direction: row;
@@ -744,28 +780,30 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </style>
         </head>
         <body>
-            <div class="container">
-                <img src="https://cdn.discordapp.com/attachments/1437844498737533002/1437844733245526118/Logoto.png?ex=6914b8c2&is=69136742&hm=ac0ce683fc8672ceee9973a4484e5ccc8dcd622a14954be4e2e9e078048e58c3&" alt="Icône du bot Logoto" class="icon">
+            <main class="container">
+                <img src="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png"
+                     alt="Icône de Logoto, le bot Discord d'automatisation de logo et de nom"
+                     class="icon">
     
-                <h1>Bienvenue sur Logoto</h1>
+                <h1>Logoto : Automatisez le Logo et le Nom de votre Serveur Discord</h1>
     
                 <p class="description">
-                    Automatisez le changement de l'icône et du nom de votre serveur Discord.
+                    Logoto est le <strong>bot Discord</strong> qu'il vous faut pour <strong>automatiser le changement de l'icône</strong> et du <strong>nom de votre serveur</strong>.
                     Planifiez vos modifications pour des événements spéciaux, des saisons ou des célébrations, sans effort !
                 </p>
     
                 <div class="button-container">
                     <a href="https://discord.com/oauth2/authorize?client_id=1431383390162124920"
                        class="btn btn-primary"
-                       target="_blank">
-                       Ajouter à Discord
+                       target="_blank"
+                       rel="noopener noreferrer"> Ajouter à Discord
                     </a>
     
                     <a href="/help" class="btn btn-secondary">
-                        Comment ça marche ?
+                       Voir l'aide et les commandes
                     </a>
                 </div>
-            </div>
+            </main>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
@@ -775,6 +813,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         Allow: /
         Disallow: /blocks.xml
         Disallow: /index.js
+        Disallow: /404
         Sitemap: https://logoto.onrender.com/sitemap.xml`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('robots.txt')))
     
       })
@@ -794,14 +833,14 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
     
       })
-      S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
+      S4D_WEBSITECREATION_EXPRESS_app.all('404', async function(req, res) {
           S4D_APP_write.sync(String('404.html'), String(`<!DOCTYPE html>
         <html lang="fr">
         <head>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>404 - Page Non Trouvée | Logoto</title>
-            <link rel="icon" type="image/png" href="https://cdn.discordapp.com/attachments/1437844498737533002/1437844732888879195/Logoto-modified.png?ex=6914b8c2&is=69136742&hm=4877126ad00f4f3a1ea09dd2a14ca40a8feddb6cfbe7713e2ac5323a1badd242&">
+            <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/kanooob/Logoto/refs/heads/main/Logoto.png">
             <style>
                 body {
                     font-family: Arial, sans-serif;
@@ -916,6 +955,34 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
             </div>
         </body>
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('404.html')))
+    
+      })
+      S4D_WEBSITECREATION_EXPRESS_app.use(function(req, res) {
+          S4D_APP_write.sync(String('Redirection.html'), String(`<!DOCTYPE html>
+        <html lang="fr">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+            <meta http-equiv="refresh" content="0; url=/404">
+    
+            <title>Redirection en cours...</title>
+    
+            <style>
+                body {
+                    font-family: Arial, sans-serif;
+                    background-color: #36393f;
+                    color: #dcddde;
+                    text-align: center;
+                    padding-top: 50px;
+                }
+            </style>
+        </head>
+        <body>
+            <p>Requête Invalide détectée. Redirection immédiate vers la page 404...</p>
+            <p>Si la redirection n'est pas automatique, veuillez cliquer ici : <a href="/404">Page non trouvée (404)</a>.</p>
+        </body>
+        </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('Redirection.html')))
     
       })
     
