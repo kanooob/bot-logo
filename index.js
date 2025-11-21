@@ -122,6 +122,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
           ]
       },{
+          name: 'info',
+      		description: 'Toutes les informations utiles ',
+      		options: [
+    
+          ]
+      },{
           name: 'help',
       		description: 'Les commandes du bot',
       		options: [
@@ -207,6 +213,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       }
       if ((interaction.commandName) == 'invite') {
         await interaction.reply({ content: (['➕ Here is the link to add the bot: [link](https://discord.com/oauth2/authorize?client_id=1431383390162124920)','\n','\n','➕ Voici le lien d\'invitation du bot Discord :[lien](https://discord.com/oauth2/authorize?client_id=1431383390162124920)'].join('')), ephemeral: false, components: [] });
+      }
+      if ((interaction.commandName) == 'info') {
+        await interaction.reply({ content: (['🔗 All useful links: [Website](https://logoto.onrender.com/), [Support Server](https://discord.gg/TPXFVYVnXe), [ToS](https://logoto.onrender.com/tos), [Privacy Policy](https://logoto.onrender.com/privacy).','\n','\n','🔗 Tous les lien utiles : [Site](https://logoto.onrender.com/), [Serveur de support](https://discord.gg/TPXFVYVnXe), [ToS](https://logoto.onrender.com/tos), [Politique de Confidentialité](https://logoto.onrender.com/privacy).'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'ping') {
         await interaction.reply({ content: (['🏓 Pong !**','\n',s4d.client.ws.ping,'**ms.','\n','[Status page](https://logoto.betteruptime.com/)'].join('')), ephemeral: false, components: [] });
@@ -1226,7 +1235,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('tos.html')))
     
       })
-      S4D_WEBSITECREATION_EXPRESS_app.all('404', async function(req, res) {
+      S4D_WEBSITECREATION_EXPRESS_app.all('/404', async function(req, res) {
           S4D_APP_write.sync(String('404.html'), String(`<!DOCTYPE html>
         <html lang="fr">
         <head>
@@ -1353,6 +1362,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       S4D_WEBSITECREATION_EXPRESS_app.all('/robots.txt', async function(req, res) {
           S4D_APP_write.sync(String('robots.txt'), String(`User-agent: *
         Allow: /
+        Allow: /help
+        Allow: /tos
+        Allow: /privacy
         Disallow: /blocks.xml
         Disallow: /index.js
         Disallow: /404
@@ -1367,9 +1379,20 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
           <loc>https://logoto.onrender.com/</loc>
           <priority>1.00</priority>
         </url>
+    
         <url>
           <loc>https://logoto.onrender.com/help</loc>
           <priority>0.80</priority>
+        </url>
+    
+        <url>
+          <loc>https://logoto.onrender.com/tos</loc>
+          <priority>0.60</priority>
+        </url>
+    
+        <url>
+          <loc>https://logoto.onrender.com/privacy</loc>
+          <priority>0.60</priority>
         </url>
     
         </urlset>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('sitemap.xml')))
