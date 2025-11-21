@@ -870,18 +870,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         </html>`), { overwrite: true });res.sendFile(S4D_WEBSITECREATION_path.join(__dirname, String('home.html')))
     
       })
-    
-    
-    S4D_WEBSITECREATION_EXPRESS_app.listen(S4D_APP_WEBSITE_HOSTING_PORT);
-    /* IMPORTED - S4D Website Hosting Dependencies */
-    let S4D_APP_WEBSITE_HOSTING_PORT = 8080
-    
-    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_cors());
-    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_bodyParser.urlencoded({
-        extended: false
-    }));
-    S4D_WEBSITECREATION_EXPRESS_app.use(S4D_WEBSITECREATION_bodyParser.json());
-    
       S4D_WEBSITECREATION_EXPRESS_app.all('/privacy', async function(req, res) {
           S4D_APP_write.sync(String('privacy.html'), String(`<!DOCTYPE html>
         <html lang="fr">
