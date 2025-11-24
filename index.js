@@ -1452,8 +1452,8 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     });
     
     s4d.client.on('guildCreate', async (s4dguild) => {
-      s4d.client.channels.cache.get('1432341468059537419').send({content:String((['Bot ajouté dans **',s4dguild.name,'** (',s4dguild.id,').'].join('')))});
-      (s4dguild.owner).send({content:String((['**Thank you** for adding **Logoto** to **',s4dguild.name,'** type `/help` for more information about the bot.','\n','\n','**Merci d\'avoir** ajouter **Logoto** dans **',s4dguild.name,'** faite `/help` pour avoir plus d\'informations sur le bot.'].join('')))});
+      s4d.client.channels.cache.get('1432341468059537419').send({content:String((['Bot ajouté dans **',s4dguild.name,'** (`',s4dguild.id,'`).'].join('')))});
+      (s4d.client.users.cache.get(String(((s4dguild.owner).id)))).send({content:String((['**Thank you** for adding **Logoto** to **',s4dguild.name,'** type `/help` for more information about the bot.','\n','\n','**Merci d\'avoir** ajouter **Logoto** dans **',s4dguild.name,'** faite `/help` pour avoir plus d\'informations sur le bot.'].join('')))});
     
     });
     

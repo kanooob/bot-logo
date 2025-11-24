@@ -2119,7 +2119,7 @@
       </block>
     </statement>
   </block>
-  <block type="s4d_on_added" id="f[f[K3UbN$5[%Vy(]zA9" x="-721" y="2523">
+  <block type="s4d_on_added" id="f[f[K3UbN$5[%Vy(]zA9" x="-891" y="2262">
     <statement name="STATEMENTS">
       <block type="s4d_send_channel" id="lwwqVA9u]IHw!|T%T3_]">
         <value name="CONTENT">
@@ -2135,7 +2135,7 @@
             </value>
             <value name="ADD2">
               <block type="jg_text_remake_paragraph_quotes" id="$=[#T,NIRJH:J$TbnQin">
-                <field name="TEXT">** (</field>
+                <field name="TEXT">** (`</field>
               </block>
             </value>
             <value name="ADD3">
@@ -2143,7 +2143,7 @@
             </value>
             <value name="ADD4">
               <block type="jg_text_remake_paragraph_quotes" id="BX{bW?Exo%@qbQ3Z5PF+">
-                <field name="TEXT">).</field>
+                <field name="TEXT">`).</field>
               </block>
             </value>
           </block>
@@ -2198,14 +2198,25 @@
               </block>
             </value>
             <value name="MEMBER">
-              <block type="s4d_add_server_owner" id="9N;QRWlF/yt(_p+~NYiu"></block>
+              <block type="jg_members_get_member_by_id" id="Ny:ec#Dbz4bt9(}1|5OD">
+                <value name="ID">
+                  <shadow type="text" id="AXP{lUDGy,eIW_Y|TJ[5">
+                    <field name="TEXT">12345</field>
+                  </shadow>
+                  <block type="s4d_member_id" id="13Q#63$Oz%5cj^eL=itJ">
+                    <value name="MEMBER">
+                      <block type="s4d_add_server_owner" id="9N;QRWlF/yt(_p+~NYiu"></block>
+                    </value>
+                  </block>
+                </value>
+              </block>
             </value>
           </block>
         </next>
       </block>
     </statement>
   </block>
-  <block type="create_event" id="Ja:u-dYlKwT3qfD7U^B^" x="-1524" y="2805">
+  <block type="create_event" id="Ja:u-dYlKwT3qfD7U^B^" x="-1991" y="2853">
     <value name="NAME">
       <shadow type="text" id="[khEgr3c8Wi0GTyHb~$-">
         <field name="TEXT">1</field>
