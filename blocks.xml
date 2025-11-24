@@ -2158,61 +2158,48 @@
             </value>
           </block>
         </value>
-        <next>
-          <block type="s4d_send_member" id="739EjnCGd;bl!,f6X-mN">
-            <value name="CONTENT">
-              <block type="text_join" id="9YC#2@ahhf-SUfQzD^M^">
-                <mutation items="8"></mutation>
-                <value name="ADD0">
-                  <block type="jg_text_remake_paragraph_quotes" id="MkoaN,2t%%Y-;{//gv[K">
-                    <field name="TEXT">**Thank you** for adding **Logoto** to **</field>
-                  </block>
-                </value>
-                <value name="ADD1">
-                  <block type="s4d_add_server_name" id="Qd~vzq2!PUi2Y]G{d6qy"></block>
-                </value>
-                <value name="ADD2">
-                  <block type="jg_text_remake_paragraph_quotes" id="`jDmG#y[5mJ7M8}Sw.[2">
-                    <field name="TEXT">** type `/help` for more information about the bot.</field>
-                  </block>
-                </value>
-                <value name="ADD3">
-                  <block type="s4d_newline" id="rO4^ovXR?R6l=C:Xmoi="></block>
-                </value>
-                <value name="ADD4">
-                  <block type="s4d_newline" id="FU89SbJllATES!3{J=7i"></block>
-                </value>
-                <value name="ADD5">
-                  <block type="jg_text_remake_paragraph_quotes" id="W-F)aRm:(V}A7xP0|RCw">
-                    <field name="TEXT">**Merci d'avoir** ajouter **Logoto** dans **</field>
-                  </block>
-                </value>
-                <value name="ADD6">
-                  <block type="s4d_add_server_name" id="=cM%LZ2+;8)cf[ml=1^x"></block>
-                </value>
-                <value name="ADD7">
-                  <block type="jg_text_remake_paragraph_quotes" id="+GbX.Ew0pa_`T];elDD$">
-                    <field name="TEXT">** faite `/help` pour avoir plus d'informations sur le bot.</field>
-                  </block>
-                </value>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_remove" id="7|nL-JHLuT==:(nHGr(H" x="-875" y="2782">
+    <statement name="STATEMENTS">
+      <block type="s4d_send_channel" id="|MCe]C+W*_W`+9iz2c4@">
+        <value name="CONTENT">
+          <block type="text_join" id="S$h}x9U?UHXQPe,z)a[H">
+            <mutation items="5"></mutation>
+            <value name="ADD0">
+              <block type="jg_text_remake_paragraph_quotes" id="E89r728=x/M+5!,TOM,j">
+                <field name="TEXT">Bot enlevé de **</field>
               </block>
             </value>
-            <value name="MEMBER">
-              <block type="jg_members_get_member_by_id" id="Ny:ec#Dbz4bt9(}1|5OD">
-                <value name="ID">
-                  <shadow type="text" id="AXP{lUDGy,eIW_Y|TJ[5">
-                    <field name="TEXT">12345</field>
-                  </shadow>
-                  <block type="s4d_member_id" id="13Q#63$Oz%5cj^eL=itJ">
-                    <value name="MEMBER">
-                      <block type="s4d_add_server_owner" id="9N;QRWlF/yt(_p+~NYiu"></block>
-                    </value>
-                  </block>
-                </value>
+            <value name="ADD1">
+              <block type="s4d_add_server_name" id="3)X(|jmim,P^XA/!-KDV"></block>
+            </value>
+            <value name="ADD2">
+              <block type="jg_text_remake_paragraph_quotes" id=".ct%=7D`]3~c%=ELL*DB">
+                <field name="TEXT">** (`</field>
+              </block>
+            </value>
+            <value name="ADD3">
+              <block type="s4d_add_server_id" id="hSw;B)eDvZ*9W-`.hA:j"></block>
+            </value>
+            <value name="ADD4">
+              <block type="jg_text_remake_paragraph_quotes" id="Y.sPow_ssl-dH9}vSgiV">
+                <field name="TEXT">`).</field>
               </block>
             </value>
           </block>
-        </next>
+        </value>
+        <value name="CHANNEL">
+          <block type="s4d_get_channel" id="An%n$CGmF-N*$`t@.xQ#">
+            <field name="SEARCH_TYPE">ID</field>
+            <value name="VALUE">
+              <block type="jg_text_remake_paragraph_quotes" id="W;Oo7Xv)KkZf-INMO}^s">
+                <field name="TEXT">1432341468059537419</field>
+              </block>
+            </value>
+          </block>
+        </value>
       </block>
     </statement>
   </block>
