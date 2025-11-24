@@ -195,6 +195,29 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     });
     
+    s4d.client.on('ready', async () => {
+      jour = ((new Date().getDate()));
+      if (((new Date().getHours())) < 4) {
+        jour = ((new Date().getDate())) - 1;
+      }
+      s4d.client.channels.cache.get('1413899996691955755').send({content:String('Démarrage du bot...')});
+    
+              while(s4d.client && s4d.client.token) {
+                  await delay(50);
+                    s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
+        await delay(Number(180)*1000);
+        if (jour != ((new Date().getDate()))) {
+          jour = ((new Date().getDate()));
+          eventEmitter.emit('1');
+        }
+        ms_on = (s4d.client.uptime);
+        s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
+    
+                  console.log('ran')
+              }
+    
+    });
+    
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'setup' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**It's almost over!**
@@ -242,26 +265,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       }
     
         });
-    
-    s4d.client.on('ready', async () => {
-      jour = ((new Date().getDate())) - 1;
-      s4d.client.channels.cache.get('1413899996691955755').send({content:String('Démarrage du bot...')});
-    
-              while(s4d.client && s4d.client.token) {
-                  await delay(50);
-                    s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
-        await delay(Number(180)*1000);
-        if (jour != ((new Date().getDate()))) {
-          jour = ((new Date().getDate()));
-          eventEmitter.emit('1');
-        }
-        ms_on = (s4d.client.uptime);
-        s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
-    
-                  console.log('ran')
-              }
-    
-    });
     
     /* IMPORTED - S4D Website Hosting Dependencies */
     let S4D_APP_WEBSITE_HOSTING_PORT = 8080
