@@ -1062,7 +1062,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                     <h2>7. Contact</h2>
                     <p>
-                        Pour toute question ou demande concernant cette Politique de Confidentialité, veuillez nous contacter à l'adresse e-mail dédiée : aidan64laf@gmail.com.
+                        Pour toute question ou demande concernant cette Politique de Confidentialité, veuillez nous contacter à l'adresse e-mail dédiée : galaxies9@duck.com.
                     </p>
     
                 </main>
@@ -1229,7 +1229,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
                     <h2>7. Contact</h2>
                     <p>
-                        Pour toute question ou préoccupation concernant ces Conditions d'Utilisation ou l'utilisation du Bot Logoto, veuillez nous contacter à l'adresse suivante : aidan64laf@gmail.com.
+                        Pour toute question ou préoccupation concernant ces Conditions d'Utilisation ou l'utilisation du Bot Logoto, veuillez nous contacter à l'adresse suivante : galaxies9@duck.com.
                     </p>
     
                 </main>
