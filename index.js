@@ -195,29 +195,6 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     });
     
-    s4d.client.on('ready', async () => {
-      jour = ((new Date().getDate()));
-      if (((new Date().getHours())) < 4) {
-        jour = ((new Date().getDate())) - 1;
-      }
-      s4d.client.channels.cache.get('1413899996691955755').send({content:String('Démarrage du bot...')});
-    
-              while(s4d.client && s4d.client.token) {
-                  await delay(50);
-                    s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
-        await delay(Number(180)*1000);
-        if (jour != ((new Date().getDate()))) {
-          jour = ((new Date().getDate()));
-          eventEmitter.emit('1');
-        }
-        ms_on = (s4d.client.uptime);
-        s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
-    
-                  console.log('ran')
-              }
-    
-    });
-    
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'setup' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
@@ -257,15 +234,45 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'name-add' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
-        (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
+        (interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
           All you have to do now is put the name of the server you want in the subject line.`,'\n',`**C'est bientôt fini !**
           Il vous reste plus qu'à mettre le nom du serveur que vous voulez dans le sujet.`].join('')))});
           await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
         });} else if ((interaction.commandName) == 'name-add' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
       }
+      if ((interaction.commandName) == 'test' && ((((interaction.channel).topic) || '').startsWith('https://cdn.discordapp.com' || ''))) {
+        await interaction.reply({ content: (['❌ Les urls discord sont déconseillé pour le changement de logo.','\n','❌ Discord URLs are not recommended for logo changes.'].join('')), ephemeral: false, components: [] });
+      } else if ((interaction.commandName) == 'test' && ((((interaction.channel).topic) || '').startsWith('https://' || ''))) {
+        await interaction.reply({ content: (['❔ Si le lien que vous avez mis est une url direct d\'une image c\'est bon. (Url direct :sur la page de l\'url il y a que l\'image rien d\'autre (pas le logo du site, pas de texte) et sur discord si vous envoyez le lien de l\'image direct il y aura que l\'image sans texte)','\n','❔ If the link you provided is a direct URL to an image, that\'s fine. (Direct URL: the URL page contains only the image, nothing else (no website logo, no text), and on Discord, if you send the direct image link, it will only display the image without any text.)'].join('')), ephemeral: false, components: [] });
+      } else if ((interaction.commandName) == 'test') {
+        await interaction.reply({ content: (['⭕ C\'est un nom de serveur. (s\'il comporter de 2 à 100 caractères).','\n','⭕ This is a server name. (if it contains between 2 and 100 characters).'].join('')), ephemeral: true, components: [] });
+      }
     
         });
+    
+    s4d.client.on('ready', async () => {
+      jour = ((new Date().getDate()));
+      if (((new Date().getHours())) < 4) {
+        jour = ((new Date().getDate())) - 1;
+      }
+      s4d.client.channels.cache.get('1413899996691955755').send({content:String('Démarrage du bot...')});
+    
+              while(s4d.client && s4d.client.token) {
+                  await delay(50);
+                    s4d.client.user.setPresence({status: "online",activities:[{name:([s4d.client.users.cache.size,' membres, ',s4d.client.guilds.cache.size,' serveurs.'].join('')),type:"WATCHING"}]});
+        await delay(Number(180)*1000);
+        if (jour != ((new Date().getDate()))) {
+          jour = ((new Date().getDate()));
+          eventEmitter.emit('1');
+        }
+        ms_on = (s4d.client.uptime);
+        s4d.client.channels.cache.get('1387514903778295940').send({content:String((['Ping :**',s4d.client.ws.ping,'\n','**Temps de fonctionnement **',Math.round(ms_on / 3600000),'** heures.'].join('')))});
+    
+                  console.log('ran')
+              }
+    
+    });
     
     /* IMPORTED - S4D Website Hosting Dependencies */
     let S4D_APP_WEBSITE_HOSTING_PORT = 8080
@@ -1469,7 +1476,18 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
           s4d.client.guilds.cache.forEach(async (s) =>{
          (s).channels.cache.forEach(async (c) =>{
            if (String(((c).name)).includes(String(([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))))) {
-            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['🔄 ',String(((c).name)).replaceAll((['-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), String('-')),'Loading'].join('')))});
+            if (typeof (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
+              (s).setIcon(((s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
+    
+              (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
+              console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
+            }
+            if (typeof (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
+              (s).setName(((s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
+    
+              (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
+              console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
+            }
           }
           await delay(Number(1)*1000);
     
