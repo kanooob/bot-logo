@@ -220,11 +220,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'setup' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
-        (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**It's almost over!**
-            All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL.`,'\n','\n',`**C'est bientôt fini !**
-            Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord.`].join('')))});
+        (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
+            All you have to do now is post an image link in the forum thread; it must be a direct URL to an image.`,'\n','\n',`**C'est bientôt fini !**
+            Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que se soit une url direct d'une image.
+            `].join('')))});
             await interaction.reply({ content: (['The change channel is :',cat,' :est le salon de changement.'].join('')), ephemeral: true, components: [] });
-          });(interaction.guild).channels.create('log-logoto', { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Log room has been created**
+          });(interaction.guild).channels.create('log-logoto', { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Log room has been created**
             You will find the actions performed by the bot in this room.`,'\n','\n',`**Salon des log à été créé**
             Vous obtiendrez les actions de changement du serveur fait par le bot dans se salon.`].join('')))});
           });});
@@ -247,18 +248,18 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         await interaction.reply({ content: (['🤝 Here is the link to the support server: [link](https://discord.gg/TPXFVYVnXe)','\n','🤝 Voici le lien vers le serveur de support :[lien](https://discord.gg/TPXFVYVnXe)'].join('')), ephemeral: false, components: [] });
       }
       if ((interaction.commandName) == 'logo-add' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
-        (interaction.guild).channels.create((['l-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
-          Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que le lien soit une url discord.
-          `,'\n',`**It's almost over!**
-          All that's left is to add a link to an image in the thread in the chat room. The link must be a Discord URL.`].join('')))});
+        (interaction.guild).channels.create((['l-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
+          All you have to do now is post an image link in the forum thread; it must be a direct URL to an image.`,'\n','\n',`**C'est bientôt fini !**
+          Il vous reste plus qu'à mettre le lien d'une image dans le sujet sur salon, il faut que se soit une url direct d'une image.
+          `].join('')))});
           await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
         });} else if ((interaction.commandName) == 'logo-add' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
       }
       if ((interaction.commandName) == 'name-add' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
-        (interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**C'est bientôt fini !**
-          Il vous reste plus qu'à mettre le nom du serveur que vous voulez dans le sujet.`,'\n',`**Almost done!**
-          All you have to do now is put the name of the server you want in the subject line.`].join('')))});
+        (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(interaction.guild).channels.create((['n-',interaction.options.getInteger('day'),'-',interaction.options.getInteger('month')].join('')), { type: "GUILD_TEXT", parent: (interaction.guild).channels.cache.find((category) => category.name === 'Logoto') }).then(async cat =>{  (cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
+          All you have to do now is put the name of the server you want in the subject line.`,'\n',`**C'est bientôt fini !**
+          Il vous reste plus qu'à mettre le nom du serveur que vous voulez dans le sujet.`].join('')))});
           await interaction.reply({ content: ('Le salon à été créé :' + String(cat)), ephemeral: true, components: [] });
         });} else if ((interaction.commandName) == 'name-add' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
