@@ -20,7 +20,7 @@
           <block type="frost_slash_command" id="d1/~5Vz?4x3XQA[8Z6z%">
             <value name="NAME">
               <shadow type="text" id="wWth}JrxK?UlKv1[Kg4*">
-                <field name="TEXT">teste</field>
+                <field name="TEXT">test</field>
               </shadow>
             </value>
             <value name="DESC">
@@ -2656,9 +2656,9 @@
             <statement name="THEN">
               <block type="controls_if" id="y3qwC;=j6C8Yz%su(O`l">
                 <value name="IF0">
-                  <block type="s4d_includes" id="r1TGsf`b[E-rqGNRQjxy">
-                    <value name="TEXT">
-                      <shadow type="text" id="{LH@%6qBNiTO@NYOv5iN">
+                  <block type="s4d_ends_with" id="w#vzcD`e{}DC)|mnhD9R">
+                    <value name="STRING">
+                      <shadow type="text" id="3ncAy}Pd*-uyvJRaT;XB">
                         <field name="TEXT">abc</field>
                       </shadow>
                       <block type="s4d_channel_ahq_name" id="x?RWKxXZ)H@0[/vVGmkV">
@@ -2667,8 +2667,8 @@
                         </value>
                       </block>
                     </value>
-                    <value name="INCLUDES">
-                      <shadow type="text" id="t*f!RW%59W=(kLet$!e+">
+                    <value name="SUBSTRING">
+                      <shadow type="text" id="c40?BnXcM1s%PJap0(cv">
                         <field name="TEXT">a</field>
                       </shadow>
                       <block type="text_join" id="`zu%LTvuK8u8w6tCMTGR">
