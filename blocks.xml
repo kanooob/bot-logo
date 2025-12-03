@@ -501,6 +501,38 @@
                                 <value name="CHANNEL">
                                   <block type="frost_created_cat" id="jrihp-uc~w%D8-Y.;N6K"></block>
                                 </value>
+                                <next>
+                                  <block type="monaco_toggle_follow_channel" id="?W|}(TE3BGx+rLTtLiox">
+                                    <value name="togglechannel">
+                                      <block type="frost_category_get" id="RwL|{2?[`@P$W`n`_)NL">
+                                        <field name="SEARCH_TYPE">ID</field>
+                                        <value name="VALUE">
+                                          <block type="jg_text_remake_paragraph_quotes" id="gT*T;y}%-A|Mjvz`Tgkk">
+                                            <field name="TEXT">1433135924228784348</field>
+                                          </block>
+                                        </value>
+                                        <value name="SERVER">
+                                          <block type="s4d_get_server" id=";N!Cuxq][PJzYo/faUg|">
+                                            <field name="SEARCH_TYPE">ID</field>
+                                            <value name="VALUE">
+                                              <block type="jg_text_remake_paragraph_quotes" id="jChY(S(ZRb+P7}xw!LMe">
+                                                <field name="TEXT">1431674445428166806</field>
+                                              </block>
+                                            </value>
+                                          </block>
+                                        </value>
+                                      </block>
+                                    </value>
+                                    <value name="locationchannel">
+                                      <block type="frost_created_cat" id="Gg,+;uEfpt0c^NuwjXx*"></block>
+                                    </value>
+                                    <value name="reason">
+                                      <block type="jg_text_remake_paragraph_quotes" id="3hV}_Iw}!K02-rZc}MI.">
+                                        <field name="TEXT">Faut être au courant.</field>
+                                      </block>
+                                    </value>
+                                  </block>
+                                </next>
                               </block>
                             </next>
                           </block>
@@ -2962,18 +2994,6 @@
                                 </value>
                               </block>
                             </value>
-                            <next>
-                              <block type="s4d_purge" id="5V(I/NiaT;-2o=z=tgs$">
-                                <value name="CHANNEL">
-                                  <block type="s4d_get_all_channel_channel" id="^^2K8`,Am6%C4)gOXj^c"></block>
-                                </value>
-                                <value name="AMOUNT">
-                                  <shadow type="math_number" id="~bv%0,5}[BW:H-,:c(B;">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                </value>
-                              </block>
-                            </next>
                           </block>
                         </next>
                       </block>
@@ -3117,18 +3137,6 @@
                                 </value>
                               </block>
                             </value>
-                            <next>
-                              <block type="s4d_purge" id="V^/6.j+Q`9#5l$7L5dym">
-                                <value name="CHANNEL">
-                                  <block type="s4d_get_all_channel_channel" id="Y6`;8XZN8^Cao~nZ-*Y}"></block>
-                                </value>
-                                <value name="AMOUNT">
-                                  <shadow type="math_number" id="}iQkiX(DL;7Jxt)i`l/Y">
-                                    <field name="NUM">1</field>
-                                  </shadow>
-                                </value>
-                              </block>
-                            </next>
                           </block>
                         </next>
                       </block>
@@ -3169,7 +3177,13 @@
                   <block type="s4d_message_author" id="H1CLFrQ=mY93Ye;!a.+w"></block>
                 </value>
                 <value name="B">
-                  <block type="jg_base_bot" id="n{LQ!Nci2vZ:$(PRP!+O"></block>
+                  <block type="jg_members_get_member_by_id" id="@j%mGf~!m$1SHL6]r(q$">
+                    <value name="ID">
+                      <shadow type="text" id="h3p}VKMsH]-2!]BIP4TO">
+                        <field name="TEXT">1431383390162124920</field>
+                      </shadow>
+                    </value>
+                  </block>
                 </value>
               </block>
             </value>
@@ -3220,7 +3234,13 @@
                   <block type="s4d_message_author" id=";A8P[5g2%h%~o@;E=KCY"></block>
                 </value>
                 <value name="B">
-                  <block type="jg_base_bot" id="|,A_p]QwwYYu5AJ:{T!r"></block>
+                  <block type="jg_members_get_member_by_id" id="lAb)PZ2zOND$mw]s0L,t">
+                    <value name="ID">
+                      <shadow type="text" id="|,=hyFq!ixiSZjM~L6FS">
+                        <field name="TEXT">1431383390162124920</field>
+                      </shadow>
+                    </value>
+                  </block>
                 </value>
               </block>
             </value>

@@ -217,6 +217,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
           });(interaction.guild).channels.create('log-logoto', { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Log room has been created**
             You will find the actions performed by the bot in this room.`,'\n','\n',`**Salon des log à été créé**
             Vous obtiendrez les actions de changement du serveur fait par le bot dans se salon.`].join('')))});
+             (s4d.client.guilds.cache.get('1431674445428166806')).channels.cache.get('1433135924228784348').addFollower((cat), String('Faut être au courant.'))
           });});
       } else if ((interaction.commandName) == 'setup' && !(((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         await interaction.reply({ content: (['❌ Your highest role does not contain permissions to manage the server.','\n','❌ Votre rôle le plus élevé ne contient pas les permission pour gérer le serveur.'].join('')), ephemeral: true, components: [] });
@@ -1513,13 +1514,11 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
             (c).send({content:String('logo')});
             console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
-            (c).bulkDelete((1|1));
           } else if (((c).name) == [(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('') && !((((c).topic) || '').startsWith('https://' || ''))) {
             (s).setName(((c).topic),'changement de nom.')
     
             (c).send({content:String('nom')});
             console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
-            (c).bulkDelete((1|1));
           }
     
         })
@@ -1529,9 +1528,9 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       });
     
     s4d.client.on('messageCreate', async (s4dmessage) => {
-      if ((s4dmessage.content) == 'logo' && (s4dmessage.author) == (s4d.client.user)) {
+      if ((s4dmessage.content) == 'logo' && (s4dmessage.author) == (s4d.client.users.cache.get(String('1431383390162124920')))) {
         (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
-      } else if ((s4dmessage.content) == 'nom' && (s4dmessage.author) == (s4d.client.user)) {
+      } else if ((s4dmessage.content) == 'nom' && (s4dmessage.author) == (s4d.client.users.cache.get(String('1431383390162124920')))) {
         (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
       }
     
