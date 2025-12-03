@@ -2920,21 +2920,11 @@
                       <block type="s4d_send_channel" id="mZ=vqjN_Fq8j4jZzNn#%">
                         <value name="CONTENT">
                           <block type="jg_text_remake_paragraph_quotes" id=";ILhI$]Qw?f=]6rG)ixl">
-                            <field name="TEXT">✅ Logo du serveurs changé.</field>
+                            <field name="TEXT">logo</field>
                           </block>
                         </value>
                         <value name="CHANNEL">
-                          <block type="frost_category_get" id="pE2*(`G+Ybs0+a(IA,vh">
-                            <field name="SEARCH_TYPE">NAME</field>
-                            <value name="VALUE">
-                              <block type="jg_text_remake_paragraph_quotes" id="uuXp?[4yOWOD8k6hGXd|">
-                                <field name="TEXT">log-logoto</field>
-                              </block>
-                            </value>
-                            <value name="SERVER">
-                              <block type="s4d_get_all_server_server" id=".RBW*U#HEs:^{dc^,H8@"></block>
-                            </value>
-                          </block>
+                          <block type="s4d_get_all_channel_channel" id="7ilby=k8_RiqTe[$bba4"></block>
                         </value>
                         <next>
                           <block type="s4d_print" id="X;[M~Ab4LBSck5=-ihDd">
@@ -2972,6 +2962,18 @@
                                 </value>
                               </block>
                             </value>
+                            <next>
+                              <block type="s4d_purge" id="5V(I/NiaT;-2o=z=tgs$">
+                                <value name="CHANNEL">
+                                  <block type="s4d_get_all_channel_channel" id="^^2K8`,Am6%C4)gOXj^c"></block>
+                                </value>
+                                <value name="AMOUNT">
+                                  <shadow type="math_number" id="~bv%0,5}[BW:H-,:c(B;">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -3073,21 +3075,11 @@
                       <block type="s4d_send_channel" id="#FFX;P5]T*25Z~|#Yg%S">
                         <value name="CONTENT">
                           <block type="jg_text_remake_paragraph_quotes" id="pleOmSO[)Cve=A9gA1D9">
-                            <field name="TEXT">✅ Nom du serveurs changé.</field>
+                            <field name="TEXT">nom</field>
                           </block>
                         </value>
                         <value name="CHANNEL">
-                          <block type="frost_category_get" id="c[vxq0sj,O{]rR{CCEDg">
-                            <field name="SEARCH_TYPE">NAME</field>
-                            <value name="VALUE">
-                              <block type="jg_text_remake_paragraph_quotes" id="DXNg7*W$r_ijAIH7?ss@">
-                                <field name="TEXT">log-logoto</field>
-                              </block>
-                            </value>
-                            <value name="SERVER">
-                              <block type="s4d_get_all_server_server" id="tjTh3T^+npv%!gESMiVE"></block>
-                            </value>
-                          </block>
+                          <block type="s4d_get_all_channel_channel" id="ia3DaCT@ZwS}Wxb0kx{l"></block>
                         </value>
                         <next>
                           <block type="s4d_print" id="iCf@wSwELqyE+J.mzB6S">
@@ -3125,6 +3117,18 @@
                                 </value>
                               </block>
                             </value>
+                            <next>
+                              <block type="s4d_purge" id="V^/6.j+Q`9#5l$7L5dym">
+                                <value name="CHANNEL">
+                                  <block type="s4d_get_all_channel_channel" id="Y6`;8XZN8^Cao~nZ-*Y}"></block>
+                                </value>
+                                <value name="AMOUNT">
+                                  <shadow type="math_number" id="}iQkiX(DL;7Jxt)i`l/Y">
+                                    <field name="NUM">1</field>
+                                  </shadow>
+                                </value>
+                              </block>
+                            </next>
                           </block>
                         </next>
                       </block>
@@ -3133,6 +3137,115 @@
                 </statement>
               </block>
             </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_message" id="!5PKfG/E36H$I6P=~t7v" x="-4376" y="5900">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="LGQ|RDC8xj*V@`BQdwKT">
+        <mutation elseif="1"></mutation>
+        <value name="IF0">
+          <block type="logic_operation" id="gkZFtFN=^z^-PWNqbjK|">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="3N%-TYL:Iz,B+0#jTH0]">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="o$R;sut6=o)4RtpdUlNK"></block>
+                </value>
+                <value name="B">
+                  <block type="jg_text_remake_paragraph_quotes" id="z3:d~l[[nq{N~c,2%Fsf">
+                    <field name="TEXT">logo</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id=",4=1~Zi^_l,}NiX4cyrK">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_author" id="H1CLFrQ=mY93Ye;!a.+w"></block>
+                </value>
+                <value name="B">
+                  <block type="jg_base_bot" id="n{LQ!Nci2vZ:$(PRP!+O"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="s4d_send_channel" id="1]jUj/?OS%z~O$xst:?N">
+            <value name="CONTENT">
+              <block type="jg_text_remake_paragraph_quotes" id="%C?~$4|*CZN$[z_Vd0h?">
+                <field name="TEXT">✅ Logo du serveurs changé.</field>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="frost_category_get" id="339K1KvTP0@O*Yr$%hBH">
+                <field name="SEARCH_TYPE">NAME</field>
+                <value name="VALUE">
+                  <block type="jg_text_remake_paragraph_quotes" id="YcuW8fAgMM66{~QPAob@">
+                    <field name="TEXT">log-logoto</field>
+                  </block>
+                </value>
+                <value name="SERVER">
+                  <block type="s4d_message_guild" id="9F~eCNr?`a60Q|Mh(zhV"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </statement>
+        <value name="IF1">
+          <block type="logic_operation" id="alx1nBmks(-#(?$9TUSG">
+            <field name="OP">AND</field>
+            <value name="A">
+              <block type="logic_compare" id="l*(my7p9n3rTx:JNA2N;">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_content" id="Z/p6b}}?9#PCyh/a{S#%"></block>
+                </value>
+                <value name="B">
+                  <block type="jg_text_remake_paragraph_quotes" id="FOD!:_ey#ZJ^*d,[W+I4">
+                    <field name="TEXT">nom</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+            <value name="B">
+              <block type="logic_compare" id="8YsgJVnd|OifOoRU6td8">
+                <field name="OP">EQ</field>
+                <value name="A">
+                  <block type="s4d_message_author" id=";A8P[5g2%h%~o@;E=KCY"></block>
+                </value>
+                <value name="B">
+                  <block type="jg_base_bot" id="|,A_p]QwwYYu5AJ:{T!r"></block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="s4d_send_channel" id="h+6g}@nGQu1SP:e-cWUU">
+            <value name="CONTENT">
+              <block type="jg_text_remake_paragraph_quotes" id="WUv#2@7CqU7E(w}:-O@_">
+                <field name="TEXT">✅ Nom du serveurs changé.</field>
+              </block>
+            </value>
+            <value name="CHANNEL">
+              <block type="frost_category_get" id=")XmCHFJQg2UX~P99^vt?">
+                <field name="SEARCH_TYPE">NAME</field>
+                <value name="VALUE">
+                  <block type="jg_text_remake_paragraph_quotes" id="1v^VHs$/m4*OQP:-gCKs">
+                    <field name="TEXT">log-logoto</field>
+                  </block>
+                </value>
+                <value name="SERVER">
+                  <block type="s4d_message_guild" id="z[5Kfu}dv5`6Q{;b$BX4"></block>
+                </value>
+              </block>
+            </value>
           </block>
         </statement>
       </block>

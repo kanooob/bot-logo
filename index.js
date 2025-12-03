@@ -1511,13 +1511,15 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
            if (((c).name) == [(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('') && ((((c).topic) || '').startsWith('https://' || ''))) {
             (s).setIcon(((c).topic),'changement de logo.')
     
-            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
+            (c).send({content:String('logo')});
             console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
+            (c).bulkDelete((1|1));
           } else if (((c).name) == [(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('') && !((((c).topic) || '').startsWith('https://' || ''))) {
             (s).setName(((c).topic),'changement de nom.')
     
-            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
+            (c).send({content:String('nom')});
             console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
+            (c).bulkDelete((1|1));
           }
     
         })
@@ -1525,6 +1527,15 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       })
     
       });
+    
+    s4d.client.on('messageCreate', async (s4dmessage) => {
+      if ((s4dmessage.content) == 'logo' && (s4dmessage.author) == (s4d.client.user)) {
+        (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
+      } else if ((s4dmessage.content) == 'nom' && (s4dmessage.author) == (s4d.client.user)) {
+        (s4dmessage.guild).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
+      }
+    
+    });
     
     return s4d
 })();
