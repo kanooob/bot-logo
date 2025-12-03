@@ -98,20 +98,22 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     var jour, ms_on;
     
     
-    await s4d.client.login((process.env[String('token')])).catch((e) => {
-            const tokenInvalid = true;
-            const tokenError = e;
-            if (e.toString().toLowerCase().includes("token")) {
-                throw new Error("An invalid bot token was provided!")
-            } else {
-                throw new Error("Privileged Gateway Intents are not enabled! Please go to https://discord.com/developers and turn on all of them.")
-            }
-        });
-    
     synchronizeSlashCommands(s4d.client, [
       {
           name: 'ping',
       		description: 'Obtenez la latence du bot',
+      		options: [
+    
+          ]
+      },{
+          name: 'teste',
+      		description: 'Verifiez si le changement du salon sera fait',
+      		options: [
+    
+          ]
+      },{
+          name: 'privee',
+      		description: 'Forcer le changement (galaxie_s9)',
       		options: [
     
           ]
@@ -195,6 +197,16 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     
     });
     
+    await s4d.client.login((process.env[String('token')])).catch((e) => {
+            const tokenInvalid = true;
+            const tokenError = e;
+            if (e.toString().toLowerCase().includes("token")) {
+                throw new Error("An invalid bot token was provided!")
+            } else {
+                throw new Error("Privileged Gateway Intents are not enabled! Please go to https://discord.com/developers and turn on all of them.")
+            }
+        });
+    
     s4d.client.on('interactionCreate', async (interaction) => {
               if ((interaction.commandName) == 'setup' && (((interaction.member).roles.highest).permissions.has('MANAGE_GUILD'))) {
         (interaction.guild).channels.create('Logoto', { type: 'GUILD_CATEGORY' }).then(async cat => {  (interaction.guild).channels.create((['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), { type: "GUILD_TEXT", parent: (cat) }).then(async cat =>{  (cat).permissionOverwrites.edit((s4d.client.users.cache.get(String('1431383390162124920'))), { VIEW_CHANNEL: true });(cat).permissionOverwrites.edit(((interaction.guild).roles.cache.get(((interaction.guild).id))), { VIEW_CHANNEL: false });(cat).send({content:String(([`**Almost done!**
@@ -247,6 +259,13 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         await interaction.reply({ content: (['❔ Si le lien que vous avez mis est une url direct d\'une image c\'est bon. (Url direct :sur la page de l\'url il y a que l\'image rien d\'autre (pas le logo du site, pas de texte) et sur discord si vous envoyez le lien de l\'image direct il y aura que l\'image sans texte)','\n','❔ If the link you provided is a direct URL to an image, that\'s fine. (Direct URL: the URL page contains only the image, nothing else (no website logo, no text), and on Discord, if you send the direct image link, it will only display the image without any text.)'].join('')), ephemeral: false, components: [] });
       } else if ((interaction.commandName) == 'test') {
         await interaction.reply({ content: (['⭕ C\'est un nom de serveur. (s\'il comporter de 2 à 100 caractères).','\n','⭕ This is a server name. (if it contains between 2 and 100 characters).'].join('')), ephemeral: true, components: [] });
+      }
+      if ((interaction.commandName) == 'privee' && (interaction.member) == (s4d.client.users.cache.get(String('746069923465527339')))) {
+        eventEmitter.emit('message1');
+        eventEmitter.emit('1');
+        await interaction.reply({ content: (['ok ','\n','❌ Discord URLs are not recommended for logo changes.'].join('')), ephemeral: true, components: [] });
+      } else if ((interaction.commandName) == 'privee') {
+        await interaction.reply({ content: (['Non.','\n','❔ If the link you provided is a direct URL to an image, that\'s fine. (Direct URL: the URL page contains only the image, nothing else (no website logo, no text), and on Discord, if you send the direct image link, it will only display the image without any text.)'].join('')), ephemeral: true, components: [] });
       }
     
         });
@@ -1476,20 +1495,30 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
           s4d.client.guilds.cache.forEach(async (s) =>{
          (s).channels.cache.forEach(async (c) =>{
            if (String(((c).name)).includes(String(([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))))) {
-            if (typeof (s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
-              (s).setIcon(((s).channels.cache.find((category) => category.name === (['l-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
-    
-              (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
-              console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
-            }
-            if (typeof (s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
-              (s).setName(((s).channels.cache.find((category) => category.name === (['n-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
-    
-              (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
-              console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
-            }
+            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String((['🔄 ',String(((c).name)).replaceAll((['-',(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('')), String('-')),'Loading'].join('')))});
           }
           await delay(Number(1)*1000);
+    
+        })
+    
+      })
+    
+      });
+    
+    eventEmitter.on('message1', async => {
+          s4d.client.guilds.cache.forEach(async (s) =>{
+         (s).channels.cache.forEach(async (c) =>{
+           if ((typeof (s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && ((((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic) || '').startsWith('https://' || ''))) {
+            (s).setIcon(((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
+    
+            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
+            console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
+          } else if (typeof (s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) {
+            (s).setName(((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
+    
+            (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
+            console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
+          }
     
         })
     
