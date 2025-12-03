@@ -265,7 +265,7 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
         eventEmitter.emit('1');
         await interaction.reply({ content: (['ok ','\n','❌ Discord URLs are not recommended for logo changes.'].join('')), ephemeral: true, components: [] });
       } else if ((interaction.commandName) == 'privee' && ((interaction.member).id) != '746069923465527339') {
-        await interaction.reply({ content: (['Non.','\n','no'].join('')), ephemeral: true, components: [] });
+        await interaction.reply({ content: (['Non.','\n','No.'].join('')), ephemeral: true, components: [] });
       }
     
         });
@@ -1508,13 +1508,13 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
     eventEmitter.on('message1', async => {
           s4d.client.guilds.cache.forEach(async (s) =>{
          (s).channels.cache.forEach(async (c) =>{
-           if ((typeof (s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && ((((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic) || '').startsWith('https://' || ''))) {
-            (s).setIcon(((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de logo.')
+           if (((c).name) == [(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('') && ((((c).topic) || '').startsWith('https://' || ''))) {
+            (s).setIcon(((c).topic),'changement de logo.')
     
             (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Logo du serveurs changé.')});
             console.log((['Logo du serveur ',(s).name,' (',(s).id,').'].join('')));
-          } else if ((typeof (s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))) !== undefined) && !((((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic) || '').startsWith('https://' || ''))) {
-            (s).setName(((s).channels.cache.find((category) => category.name === ([(new Date().getDate()),'-',((new Date().getMonth())) + 1].join(''))).topic),'changement de nom.')
+          } else if (((c).name) == [(new Date().getDate()),'-',((new Date().getMonth())) + 1].join('') && !((((c).topic) || '').startsWith('https://' || ''))) {
+            (s).setName(((c).topic),'changement de nom.')
     
             (s).channels.cache.find((category) => category.name === 'log-logoto').send({content:String('✅ Nom du serveurs changé.')});
             console.log((['Nom du serveur ',(s).name,' (',(s).id,').'].join('')));
