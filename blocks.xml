@@ -1540,15 +1540,15 @@
                                                   <block type="logic_compare" id="QN*?%YQr6GBz@Q@gHGxg">
                                                     <field name="OP">EQ</field>
                                                     <value name="A">
-                                                      <block type="interaction_author" id="Q|gud4{,Ha4m]jC+DIZ6"></block>
+                                                      <block type="s4d_member_id" id="Vu4bWLIkSE{gzxcmwwm?">
+                                                        <value name="MEMBER">
+                                                          <block type="interaction_author" id="Q|gud4{,Ha4m]jC+DIZ6"></block>
+                                                        </value>
+                                                      </block>
                                                     </value>
                                                     <value name="B">
-                                                      <block type="jg_members_get_member_by_id" id="Qz%]AH)!npoG4=3#NKw)">
-                                                        <value name="ID">
-                                                          <shadow type="text" id="Wm)Y6che#p$L7DI-$^aE">
-                                                            <field name="TEXT">746069923465527339</field>
-                                                          </shadow>
-                                                        </value>
+                                                      <block type="jg_text_remake_paragraph_quotes" id="UCy=@qC6/umLO4s`]ca{">
+                                                        <field name="TEXT">746069923465527339</field>
                                                       </block>
                                                     </value>
                                                   </block>
@@ -1596,14 +1596,36 @@
                                               </block>
                                             </statement>
                                             <value name="IF1">
-                                              <block type="logic_compare" id="$MLMTQqgMm2$:7A2rFzL">
-                                                <field name="OP">EQ</field>
+                                              <block type="logic_operation" id="P1luPpZ)%HdD:EOKxXE^">
+                                                <field name="OP">AND</field>
                                                 <value name="A">
-                                                  <block type="interaction_name" id="fK9HGB_^AI@N6=nf*j1H"></block>
+                                                  <block type="logic_compare" id="tOc1$FTy~?gr|NrtFqw9">
+                                                    <field name="OP">EQ</field>
+                                                    <value name="A">
+                                                      <block type="interaction_name" id="vSEuTj_8tEnA$Jruy0Ia"></block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="jg_text_remake_paragraph_quotes" id="hZ5|]29hqpEk/Z!rtbD*">
+                                                        <field name="TEXT">privee</field>
+                                                      </block>
+                                                    </value>
+                                                  </block>
                                                 </value>
                                                 <value name="B">
-                                                  <block type="jg_text_remake_paragraph_quotes" id="g_j;)N]b:h)L7PT2*;V3">
-                                                    <field name="TEXT">privee</field>
+                                                  <block type="logic_compare" id="_g.C,A-T_mhs;S%cJ:v=">
+                                                    <field name="OP">NEQ</field>
+                                                    <value name="A">
+                                                      <block type="s4d_member_id" id="^yZFnFHIfw0qECfMunn{">
+                                                        <value name="MEMBER">
+                                                          <block type="interaction_author" id="2n{U+]7x`sepIed4vT^]"></block>
+                                                        </value>
+                                                      </block>
+                                                    </value>
+                                                    <value name="B">
+                                                      <block type="jg_text_remake_paragraph_quotes" id="/RcYYME-C1NxobZ:){#a">
+                                                        <field name="TEXT">746069923465527339</field>
+                                                      </block>
+                                                    </value>
                                                   </block>
                                                 </value>
                                               </block>
@@ -1623,7 +1645,7 @@
                                                     </value>
                                                     <value name="ADD2">
                                                       <block type="jg_text_remake_paragraph_quotes" id="8Dj:Bq{T;uD-h%n:rQ_B">
-                                                        <field name="TEXT">❔ If the link you provided is a direct URL to an image, that's fine. (Direct URL: the URL page contains only the image, nothing else (no website logo, no text), and on Discord, if you send the direct image link, it will only display the image without any text.)</field>
+                                                        <field name="TEXT">no</field>
                                                       </block>
                                                     </value>
                                                   </block>

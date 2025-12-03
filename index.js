@@ -260,12 +260,12 @@ const S4D_WEBSITECREATION_EXPRESS_app = S4D_WEBSITECREATION_EXPRESS();
       } else if ((interaction.commandName) == 'test') {
         await interaction.reply({ content: (['⭕ C\'est un nom de serveur. (s\'il comporter de 2 à 100 caractères).','\n','⭕ This is a server name. (if it contains between 2 and 100 characters).'].join('')), ephemeral: true, components: [] });
       }
-      if ((interaction.commandName) == 'privee' && (interaction.member) == (s4d.client.users.cache.get(String('746069923465527339')))) {
+      if ((interaction.commandName) == 'privee' && ((interaction.member).id) == '746069923465527339') {
         eventEmitter.emit('message1');
         eventEmitter.emit('1');
         await interaction.reply({ content: (['ok ','\n','❌ Discord URLs are not recommended for logo changes.'].join('')), ephemeral: true, components: [] });
-      } else if ((interaction.commandName) == 'privee') {
-        await interaction.reply({ content: (['Non.','\n','❔ If the link you provided is a direct URL to an image, that\'s fine. (Direct URL: the URL page contains only the image, nothing else (no website logo, no text), and on Discord, if you send the direct image link, it will only display the image without any text.)'].join('')), ephemeral: true, components: [] });
+      } else if ((interaction.commandName) == 'privee' && ((interaction.member).id) != '746069923465527339') {
+        await interaction.reply({ content: (['Non.','\n','no'].join('')), ephemeral: true, components: [] });
       }
     
         });
